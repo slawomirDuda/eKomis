@@ -3,21 +3,39 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class TextInterface_Login {
-    public static void loginMainScreen() throws FileNotFoundException {
+
+    public static final String LOGIN_SCREEN_RESULT_LOGIN_SUCCESS = "Login Success";
+    public static final String LOGIN_SCREEN_RESULT_LOGIN_FAILURE = "Login Failure";
+    public static final String LOGIN_SCREEN_RESULT_EXIT_APPLICATION = "Exit";
+
+    public static String loginMainScreen() throws FileNotFoundException {
 
         Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
 
         System.out.println("1.Log in");
         System.out.println("2.Sign up");
+        System.out.println("3.Exit Application");
         System.out.println("Enter index number");
-        int index = Integer.parseInt(myScanner.nextLine());
-
-        if (index == 1) {
-            logIn();
-        } else {
-            signUp();
+        int index = 0;
+        try{
+            index = Integer.parseInt(myScanner.nextLine());
+        }catch (NumberFormatException e){
+            System.out.println("WRONG INPUT");
+            return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
         }
 
+        switch(index) {
+            case 1:
+                return logIn();
+            case 2:
+                signUp();
+                return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
+            case 3:
+                return LOGIN_SCREEN_RESULT_EXIT_APPLICATION;
+            default:
+                System.out.println("Wrong index number");
+                return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
+        }
     }
     public static void signUp(){
         try {
@@ -28,13 +46,13 @@ public class TextInterface_Login {
             System.out.println("Enter Password:");
             String password = myScanner.nextLine();
             BackEndMethods.createUser(userName,password);
-            System.out.println("Account succesfully created, you can now log in");
+            System.out.println("Account successfully created, you can now log in");
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
     }
-    public static void logIn() throws FileNotFoundException {
+    public static String logIn() throws FileNotFoundException {
         Scanner myScanner = new Scanner(System.in);
         System.out.println("LOG IN:");
         System.out.println("Enter Username:");
@@ -44,14 +62,15 @@ public class TextInterface_Login {
             System.out.println("Enter Password:");
             String password = myScanner.nextLine();
             if(splitted[1].contentEquals(password)){
-                System.out.println("Acces Granted");
-                TextInterface_UserPanel.userPanelMainScreen();
+                System.out.println("Access Granted");
+                return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
             } else {
                 System.out.println("Wrong Password");
             }
         } else {
             System.out.println("User name not found");
         }
+        return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
     }
 
 
