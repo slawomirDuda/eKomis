@@ -10,13 +10,15 @@ public class TextInterface_Login {
 
     public static String loginMainScreen() throws FileNotFoundException {
 
-        Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
 
         System.out.println("1.Log in");
         System.out.println("2.Sign up");
         System.out.println("3.Exit Application");
         System.out.println("Enter index number");
+
+        Scanner myScanner = new Scanner(System.in);  // Create a Scanner object
         int index = 0;
+
         try{
             index = Integer.parseInt(myScanner.nextLine());
         }catch (NumberFormatException e){
@@ -31,6 +33,7 @@ public class TextInterface_Login {
                 signUp();
                 return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
             case 3:
+                System.out.println("Good bye!");
                 return LOGIN_SCREEN_RESULT_EXIT_APPLICATION;
             default:
                 System.out.println("Wrong index number");
@@ -40,7 +43,6 @@ public class TextInterface_Login {
     public static void signUp(){
         try {
             Scanner myScanner = new Scanner(System.in);
-            System.out.println("CREATE ACCOUNT:");
             System.out.println("Enter Username:");
             String userName = myScanner.nextLine();
             System.out.println("Enter Password:");
@@ -54,7 +56,6 @@ public class TextInterface_Login {
     }
     public static String logIn() throws FileNotFoundException {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("LOG IN:");
         System.out.println("Enter Username:");
         String userName = myScanner.nextLine();
         String[] splitted = BackEndMethods.findUser(userName);
