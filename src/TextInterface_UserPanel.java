@@ -12,6 +12,7 @@ public class TextInterface_UserPanel {
 
         Scanner myScanner = new Scanner(System.in);
 
+        System.out.println("USER PANEL:");
         System.out.println("1.Your offers");
         System.out.println("2.Transactions");
         System.out.println("3.Search for offers");

@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="init commit">
-      <change afterPath="$PROJECT_DIR$/src/Data/Users.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_2_Transactions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_3_SearchForOffers.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_4_AccountSettings.java" afterDir="false" />
+    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="13/12/22 updtae">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextInterface_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669314110131</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="13/12/22 updtae">
+      <created>1670943021862</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670943021862</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -93,6 +95,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="init commit" />
+    <MESSAGE value="13/12/22 updtae" />
+    <option name="LAST_COMMIT_MESSAGE" value="13/12/22 updtae" />
   </component>
 </project>
