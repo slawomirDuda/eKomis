@@ -8,38 +8,23 @@ public class Main {
         String userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_FAILURE;
         String yourOffersResult = TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_FAILURE;
 
-        while (loginResult != TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION) {
+        while ( ! Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION)) {
             loginResult = TextInterface_Login.loginMainScreen();
 
-            if (loginResult == TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS) {
+            if (Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS)) {
 
-                while (userPanelResult != TextInterface_UserPanel.USER_PANEL_RESULT_LOG_OUT) {
+                while ( ! Objects.equals(userPanelResult, TextInterface_UserPanel.USER_PANEL_RESULT_LOG_OUT)) {
                     userPanelResult = TextInterface_UserPanel.userPanelMainScreen();
 
-                    if(userPanelResult == TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_YOUR_OFFERS){
+                    if(Objects.equals(userPanelResult, TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_YOUR_OFFERS)) {
 
-                        while (yourOffersResult != TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_GO_BACK) {
-                            TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
+                        while ( ! Objects.equals(yourOffersResult, TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_GO_BACK)) {
+                            yourOffersResult = TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
                         }
-
+                        yourOffersResult = TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_FAILURE;
                     }
-
-//                    switch (userPanelResult) {
-//                        case TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_YOUR_OFFERS:
-//                            TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
-//                        case TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_TRANSACTIONS:
-//                            TextInterface_UserPanel_2_Transactions.transactionsMainScreen();
-//                        case TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_SEARCH_FOR_OFFERS:
-//                            TextInterface_UserPanel_3_SearchForOffers.searchOffersMainScreen();
-//                        case TextInterface_UserPanel.USER_PANEL_RESULT_OPEN_ACCOUNT_SETTINGS:
-//                            TextInterface_UserPanel_4_AccountSettings.accountSettingsMainScreen();
-//                        default:
-//                            userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_FAILURE;
-//                            System.out.println();
-//                            System.out.println("Something went wrong");
-//                    }
                 }
-
+                userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_FAILURE;
             }
         }
     }
