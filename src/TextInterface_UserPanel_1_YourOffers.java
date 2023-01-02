@@ -1,12 +1,8 @@
 import java.util.Scanner;
 public class TextInterface_UserPanel_1_YourOffers {
-
-    public static final String YOUR_OFFERS_RESULT_GO_BACK = "Go back";
-    public static final String YOUR_OFFERS_RESULT_FAILURE = "Failure";
-    public static String yourOffersMainScreen() {
+    public static void yourOffersMainScreen() {
 
         Scanner myScanner = new Scanner(System.in);
-
         System.out.println("YOUR OFFERS:");
         System.out.println("You have no offers yet");
         System.out.println("Type 'B' to go back");
@@ -17,15 +13,15 @@ public class TextInterface_UserPanel_1_YourOffers {
             index = myScanner.nextLine();
         }catch (NumberFormatException e){
             System.out.println("WRONG INPUT");
-            return YOUR_OFFERS_RESULT_FAILURE;
         }
 
-        switch (index) {
-            case "B":
-                return YOUR_OFFERS_RESULT_GO_BACK;
-            default:
-                System.out.println("WRONG INPUT");
-                return YOUR_OFFERS_RESULT_FAILURE;
+        if ("B".equals(index)) {
+            TextInterface_UserPanel.userPanelMainScreen();
+        } else  {
+            System.out.println("WRONG INPUT");
+            TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
         }
     }
+
 }
+
