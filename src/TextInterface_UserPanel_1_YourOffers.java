@@ -1,6 +1,9 @@
 import java.util.Scanner;
 public class TextInterface_UserPanel_1_YourOffers {
-    public static void yourOffersMainScreen() {
+
+    public static final String YOUR_OFFERS_RESULT_GO_BACK = "Go Back";
+    public static final String YOUR_OFFERS_RESULT_FAILURE = "Failure";
+    public static String yourOffersMainScreen() {
 
         Scanner myScanner = new Scanner(System.in);
         System.out.println("YOUR OFFERS:");
@@ -16,10 +19,10 @@ public class TextInterface_UserPanel_1_YourOffers {
         }
 
         if ("B".equals(index)) {
-            TextInterface_UserPanel.userPanelMainScreen();
+            return YOUR_OFFERS_RESULT_GO_BACK;
         } else  {
             System.out.println("WRONG INPUT");
-            TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
+            return YOUR_OFFERS_RESULT_FAILURE;
         }
     }
 
