@@ -40,6 +40,7 @@ public class TextInterface_Login {
                 return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
         }
     }
+
     public static void signUp(){
         try {
             Scanner myScanner = new Scanner(System.in);
@@ -64,6 +65,7 @@ public class TextInterface_Login {
             String password = myScanner.nextLine();
             if(splitted[1].contentEquals(password)){
                 System.out.println("Access Granted");
+                Main.loggedUser = userName;
                 return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
             } else {
                 System.out.println("Wrong Password");

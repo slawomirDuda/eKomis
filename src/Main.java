@@ -2,6 +2,8 @@ import java.io.FileNotFoundException;
 import java.util.Objects;
 
 public class Main {
+
+    public static String loggedUser;
     public static void main(String[] args) throws FileNotFoundException {
 
         String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;

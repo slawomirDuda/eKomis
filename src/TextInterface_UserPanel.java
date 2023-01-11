@@ -31,67 +31,34 @@ public class TextInterface_UserPanel {
             return USER_PANEL_RESULT_FAILURE;
         }
 
-//        switch(index) {
-//                case 1:
-//                    while ( ! Objects.equals(yourOffersResult, TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_GO_BACK)) {
-//                        yourOffersResult = TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
-//                    }
-////                    yourOffersResult = TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_FAILURE;
-//
-//                case 2:
-//                    while ( ! Objects.equals(trasactionsResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
-//                        trasactionsResult = TextInterface_UserPanel_2_Transactions.transactionsMainScreen();
-//                    }
-////                   trasactionsResult = TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_FAILURE;
-//
-//                case 3:
-//                    while ( ! Objects.equals(searchForOffersResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
-//                        searchForOffersResult = TextInterface_UserPanel_3_SearchForOffers.searchOffersMainScreen();
-//                    }
-////                    searchForOffersResult = TextInterface_UserPanel_3_SearchForOffers.SEARCH_FOR_OFFERS_RESULT_FAILURE;
-//
-//                case 4:
-//                    while ( ! Objects.equals(accoutSettingsResult, TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_GO_BACK)) {
-//                        accoutSettingsResult = TextInterface_UserPanel_4_AccountSettings.accountSettingsMainScreen();
-//                    }
-////                    accoutSettingsResult = TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_FAILURE;
-//
-//                case 5:
-//                    System.out.println("Logged out");
-//                    return USER_PANEL_RESULT_LOG_OUT;
-//                default:
-//                    System.out.println("Wrong index number");
-//                    return USER_PANEL_RESULT_FAILURE;
-//        }
-
-        if (index == 1) {
-            while ( ! Objects.equals(yourOffersResult, TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_GO_BACK)) {
-                yourOffersResult = TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
-            }
+        switch (index) {
+            case 1:
+                while (!Objects.equals(yourOffersResult, TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_GO_BACK)) {
+                    yourOffersResult = TextInterface_UserPanel_1_YourOffers.yourOffersMainScreen();
+                }
+                break;
+            case 2:
+                while (!Objects.equals(trasactionsResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
+                    trasactionsResult = TextInterface_UserPanel_2_Transactions.transactionsMainScreen();
+                }
+                break;
+            case 3:
+                while (!Objects.equals(searchForOffersResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
+                    searchForOffersResult = TextInterface_UserPanel_3_SearchForOffers.searchOffersMainScreen();
+                }
+                break;
+            case 4:
+                while (!Objects.equals(accoutSettingsResult, TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_GO_BACK)) {
+                    accoutSettingsResult = TextInterface_UserPanel_4_AccountSettings.accountSettingsMainScreen();
+                }
+                break;
+            case 5:
+                System.out.println("Logged out");
+                return USER_PANEL_RESULT_LOG_OUT;
+            default:
+                System.out.println("Wrong index number");
+                return USER_PANEL_RESULT_FAILURE;
         }
-        else if (index == 2) {
-            while (!Objects.equals(trasactionsResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
-                trasactionsResult = TextInterface_UserPanel_2_Transactions.transactionsMainScreen();
-            }
-        }
-        else if (index == 3) {
-            while (!Objects.equals(searchForOffersResult, TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_GO_BACK)) {
-                searchForOffersResult = TextInterface_UserPanel_3_SearchForOffers.searchOffersMainScreen();
-            }
-        }
-        else if (index == 4) {
-            while (!Objects.equals(accoutSettingsResult, TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_GO_BACK)) {
-                accoutSettingsResult = TextInterface_UserPanel_4_AccountSettings.accountSettingsMainScreen();
-            }
-        }
-        else if (index == 5) {
-            System.out.println("Logged out");
-            return USER_PANEL_RESULT_LOG_OUT;
-        }
-        else {
-            System.out.println("Wrong index number");
-            return USER_PANEL_RESULT_FAILURE;
-        }
-       return null;
+        return null;
     }
 }
