@@ -1,30 +1,33 @@
 import java.util.Scanner;
 public class TextInterface_UserPanel_1_YourOffers {
 
-    public static final String YOUR_OFFERS_RESULT_GO_BACK = "Go Back";
-    public static final String YOUR_OFFERS_RESULT_FAILURE = "Failure";
-    public static String yourOffersMainScreen() {
+//    public static final String YOUR_OFFERS_RESULT_GO_BACK = "Go Back";
+//    public static final String YOUR_OFFERS_RESULT_WORKING = "Working";
+//    public static String yourOffersResult = YOUR_OFFERS_RESULT_WORKING;
+    public static void yourOffersMainScreen() {
 
-        Scanner myScanner = new Scanner(System.in);
-        System.out.println("YOUR OFFERS:");
-        System.out.println("You have no offers yet");
-        System.out.println("Type 'B' to go back");
+        while (true) {
 
-        String index = "0";
+            Scanner myScanner = new Scanner(System.in);
+            System.out.println("YOUR OFFERS:");
+            System.out.println("You have no offers yet");
+            System.out.println("Type 'B' to go back");
 
-        try{
-            index = myScanner.nextLine();
-        }catch (NumberFormatException e){
-            System.out.println("WRONG INPUT");
-        }
+            String index = "0";
 
-        if ("B".equals(index)) {
-            return YOUR_OFFERS_RESULT_GO_BACK;
-        } else  {
-            System.out.println("WRONG INPUT");
-            return YOUR_OFFERS_RESULT_FAILURE;
+            try {
+                index = myScanner.nextLine();
+            } catch (NumberFormatException e) {
+                System.out.println("WRONG INPUT");
+                continue;
+            }
+
+            if ("B".equals(index)) {
+                break;
+            } else {
+                System.out.println("WRONG INPUT");
+            }
         }
     }
-
 }
 

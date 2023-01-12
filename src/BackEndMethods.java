@@ -25,11 +25,11 @@ public class BackEndMethods {
         myWriter.close();
     }
 
-    public static void changePassword(String password) throws IOException {
-        FileWriter myWriter = new FileWriter("src\\Data\\Users.csv",true);
-        myWriter.write(password);
-        myWriter.close();
-    }
+//    public static void changePassword(String password) throws IOException {
+//        FileWriter myWriter = new FileWriter("src\\Data\\Users.csv",true);
+//        myWriter.write(password);
+//        myWriter.close();
+//    }
 }
 
 //    public static void signUp(){

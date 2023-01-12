@@ -33,10 +33,10 @@ public class TextInterface_Login {
                 signUp();
                 return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
             case 3:
-                System.out.println("Good bye!");
+                System.out.println("GOOD BYE!");
                 return LOGIN_SCREEN_RESULT_EXIT_APPLICATION;
             default:
-                System.out.println("Wrong index number");
+                System.out.println("WRONG INDEX NUMBER");
                 return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
         }
     }
