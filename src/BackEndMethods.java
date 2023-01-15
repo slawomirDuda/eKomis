@@ -1,7 +1,9 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Scanner;
 
 public class BackEndMethods {
@@ -25,44 +27,42 @@ public class BackEndMethods {
         myWriter.close();
     }
 
-//    public static void changePassword(String password) throws IOException {
-//        FileWriter myWriter = new FileWriter("src\\Data\\Users.csv",true);
-//        myWriter.write(password);
-//        myWriter.close();
-//    }
+    public static void overwriteData(int lineNumber, String data) throws IOException {
+        Path path = Paths.get("src\\Data\\Users.csv");
+        List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+        lines.set(lineNumber - 1, data);
+        Files.write(path, lines, StandardCharsets.UTF_8);
+    }
+
+    public static int findCurrentLine(String userName) throws IOException {
+
+        File Users = new File("src\\Data\\Users.csv");
+        Scanner myReader = new Scanner(Users);
+        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
+
+        while (myReader.hasNextLine()) {
+
+            String data = myReader.nextLine();
+            String[] splitted = data.split(",");
+
+            if (splitted[0].contentEquals(userName)) {
+
+                int i = 1;
+                try {
+                    String line = r.readLine();
+                    while (line != null) {
+                        if (line.contains(userName) ) {
+//                            System.out.print("Line " + i + line); todo// print all lines
+                            return i;
+                        }
+                        line = r.readLine();
+                        i++;
+                    }
+                } finally {
+                    r.close();                                  // Free up file descriptor resources
+                }
+            }
+        }
+        return 0;
+    }
 }
-
-//    public static void signUp(){
-//        try {
-//            Scanner myScanner = new Scanner(System.in);
-//            System.out.println("Enter Username:");
-//            String userName = myScanner.nextLine();
-//            System.out.println("Enter Password:");
-//            String password = myScanner.nextLine();
-//            BackEndMethods.createUser(userName,password);
-//            System.out.println("Account successfully created, you can now log in");
-//        } catch (IOException e) {
-//            System.out.println("An error occurred.");
-//            e.printStackTrace();
-//        }
-//    }
-//    public static String logIn() throws FileNotFoundException {
-//        Scanner myScanner = new Scanner(System.in);
-//        System.out.println("Enter Username:");
-//        String userName = myScanner.nextLine();
-//        String[] splitted = BackEndMethods.findUser(userName);
-//        if(splitted != null){
-//            System.out.println("Enter Password:");
-//            String password = myScanner.nextLine();
-//            if(splitted[1].contentEquals(password)){
-//                System.out.println("Access Granted");
-//                Main.loggedUser = userName;
-//                return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
-//            } else {
-//                System.out.println("Wrong Password");
-//            }
-//        } else {
-//            System.out.println("User name not found");
-//        }
-//        return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
-

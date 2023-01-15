@@ -1,10 +1,11 @@
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 public class TextInterface_UserPanel {
     public static final String USER_PANEL_RESULT_LOG_OUT = "Log Out";
     public static final String USER_PANEL_RESULT_WORKING = "Working";
     public static String userPanelResult = USER_PANEL_RESULT_WORKING;
-    public static void userPanelMainScreen(){
+    public static void userPanelMainScreen() throws IOException {
 
         while (Objects.equals(userPanelResult, TextInterface_UserPanel.USER_PANEL_RESULT_WORKING) ) {
 
@@ -15,6 +16,7 @@ public class TextInterface_UserPanel {
 
             Scanner myScanner = new Scanner(System.in);
 
+            System.out.println("Logged User: " + Main.loggedUser);
             System.out.println("USER PANEL:");
             System.out.println("1.Your offers");
             System.out.println("2.Transactions");

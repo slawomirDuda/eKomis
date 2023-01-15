@@ -66,6 +66,7 @@ public class TextInterface_Login {
             if(splitted[1].contentEquals(password)){
                 System.out.println("Access Granted");
                 Main.loggedUser = userName;
+                Main.loggedUserPassword = password;
                 return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
             } else {
                 System.out.println("Wrong Password");

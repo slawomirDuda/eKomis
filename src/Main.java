@@ -1,9 +1,10 @@
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.Objects;
 
 public class Main {
     public static String loggedUser;
-    public static void main(String[] args) throws FileNotFoundException {
+    public static String loggedUserPassword;
+    public static void main(String[] args) throws IOException {
 
         String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
 
@@ -20,3 +21,8 @@ public class Main {
         }
     }
 }
+// ZMIANY ZACHODZA DOPIERO PO ZAKONCZENIU DZIALANIA
+// JAK ZROBIC RESTART ALBO EXIT INSTANT
+// NIE MOZNA ZA JEDNYM ZALOGOWANIEM ZMIENIC HASLA I USERNAME
+// DODAC AUTORYZACJE
+// OGARNAC CZYSZCZENIE KONSOLI
