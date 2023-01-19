@@ -10,7 +10,7 @@ public class TextInterface_UserPanel_3_SearchForOffers {
         while (true) {
 
             Scanner myScanner = new Scanner(System.in);
-            System.out.println("SEARCH FOR OFFERS:");
+            System.out.println("SEARCH FOR OFFERS PANEL:");
             System.out.println("WORK IN PROGRESS...");
             System.out.println("Type 'B' to go back");
 

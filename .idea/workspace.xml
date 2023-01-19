@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="12/01/23 update&#10;&#10;LOOPS - DONE&#10;&#10;TO DO - DELETE PASSWORD">
+    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="15/01/23 update&#10;&#10;LOOPS - DONE&#10;CHANGE PASSWORD - DONE&#10;CHANGE USERNAME - DONE&#10;DELETE ACCOUNT - DONE">
+      <change afterPath="$PROJECT_DIR$/src/Data/Offers Concept.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Data/Offers.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackEndMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackEndMethods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextInterface_Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_Login.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_2_Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_2_Transactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_3_SearchForOffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_3_SearchForOffers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_4_AccountSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_4_AccountSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -109,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673528288276</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="15/01/23 update&#10;&#10;LOOPS - DONE&#10;CHANGE PASSWORD - DONE&#10;CHANGE USERNAME - DONE&#10;DELETE ACCOUNT - DONE">
+      <created>1673788008162</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673788008162</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +141,7 @@
     <MESSAGE value="02/01/23 update" />
     <MESSAGE value="07/01/23 update&#10;&#10;to działa wow" />
     <MESSAGE value="12/01/23 update&#10;&#10;LOOPS - DONE&#10;&#10;TO DO - DELETE PASSWORD" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/01/23 update&#10;&#10;LOOPS - DONE&#10;&#10;TO DO - DELETE PASSWORD" />
+    <MESSAGE value="15/01/23 update&#10;&#10;LOOPS - DONE&#10;CHANGE PASSWORD - DONE&#10;CHANGE USERNAME - DONE&#10;DELETE ACCOUNT - DONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="15/01/23 update&#10;&#10;LOOPS - DONE&#10;CHANGE PASSWORD - DONE&#10;CHANGE USERNAME - DONE&#10;DELETE ACCOUNT - DONE" />
   </component>
 </project>

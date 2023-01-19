@@ -4,6 +4,7 @@ import java.util.Objects;
 public class Main {
     public static String loggedUser;
     public static String loggedUserPassword;
+    public static int loggedUserLine;
     public static void main(String[] args) throws IOException {
 
         String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
@@ -21,8 +22,12 @@ public class Main {
         }
     }
 }
+//TODO
+// OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)
+// DOPRACOWAC DELETE ACCOUNT
 // ZMIANY ZACHODZA DOPIERO PO ZAKONCZENIU DZIALANIA
 // JAK ZROBIC RESTART ALBO EXIT INSTANT
 // NIE MOZNA ZA JEDNYM ZALOGOWANIEM ZMIENIC HASLA I USERNAME
 // DODAC AUTORYZACJE
 // OGARNAC CZYSZCZENIE KONSOLI
+// EW. DODAC NP ZE HASLO MUSI SIE SKLADAC Z OKRESLONEJ LICZBY ZNAKOW I MA ZAWIERAC JAKIES CYFRY I ZNAKI SPECJALNE

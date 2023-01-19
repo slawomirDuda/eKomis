@@ -7,8 +7,11 @@ public class TextInterface_UserPanel_4_AccountSettings {
     public static String accountSettingsResult = ACCOUNT_SETTINGS_RESULT_WORKING;
     public static void accountSettingsMainScreen() throws IOException {
 
-        while ( ! Objects.equals(TextInterface_UserPanel_4_AccountSettings.accountSettingsResult, TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_GO_BACK)) {
+        while ( ! Objects.equals(TextInterface_UserPanel_4_AccountSettings.accountSettingsResult,
+                TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_GO_BACK)
+        ) {
 
+            System.out.println("ACCOUNT SETTINGS PANEL:");
             System.out.println("1.Change username");
             System.out.println("2.Change password");
             System.out.println("3.Delete your account");
@@ -52,14 +55,14 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Set your new password:");
 
-        try {
+//        try {
             newPassword = myScanner.nextLine();
-        } catch (NumberFormatException e) {
-            System.out.println("WRONG INPUT");
-        }
+//        } catch (NumberFormatException e) {        //todo czy to jest potrzebne ODP = NIEE, DO WYJEBANIA ZAKOMENTOWANE
+//            System.out.println("WRONG INPUT");
+//        }
 
-        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
-        BackEndMethods.overwriteData(currentLine, Main.loggedUser + "," + newPassword);
+//        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
+        BackEndMethods.overwriteData(Main.loggedUserLine, Main.loggedUser + "," + newPassword);
 
         System.out.println("Done. Your password will change after application restart.");
     }
@@ -71,14 +74,14 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Set your new username:");
 
-        try {
+//        try {
             newUsername = myScanner.nextLine();
-        } catch (NumberFormatException e) {
-            System.out.println("WRONG INPUT");
-        }
+//        } catch (NumberFormatException e) {
+//            System.out.println("WRONG INPUT");
+//        }
 
-        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
-        BackEndMethods.overwriteData(currentLine, newUsername + "," + Main.loggedUserPassword);
+//        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
+        BackEndMethods.overwriteData(Main.loggedUserLine, newUsername + "," + Main.loggedUserPassword);
 
         System.out.println("Done. Your username will change after application restart.");
     }
@@ -90,15 +93,15 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Are you sure? Y/N:");
 
-        try {
+//        try {
             userChoice = myScanner.nextLine();
-        } catch (NumberFormatException e) {
-            System.out.println("WRONG INPUT");
-        }
+//        } catch (NumberFormatException e) {
+//            System.out.println("WRONG INPUT");
+//        }
 
         if ("Y".equals(userChoice)) {
-            int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
-            BackEndMethods.overwriteData(currentLine, null);
+//            int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
+            BackEndMethods.overwriteData(Main.loggedUserLine, null);
             System.out.println("Done. Your account will be completely removed after application restart. ");
         } else if ("N".equals(userChoice)) {
             System.out.println("Keep browsing");

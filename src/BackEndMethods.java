@@ -10,10 +10,13 @@ public class BackEndMethods {
     public static String[] findUser(String userName) throws FileNotFoundException {
         File Users = new File("src\\Data\\Users.csv");
         Scanner myReader = new Scanner(Users);
+        int counter = 0;
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
             String[] splitted = data.split(",");
+            counter++;
             if (splitted[0].contentEquals(userName)) {
+                Main.loggedUserLine = counter;
                 return splitted;
             }
         }
@@ -34,35 +37,35 @@ public class BackEndMethods {
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
 
-    public static int findCurrentLine(String userName) throws IOException {
-
-        File Users = new File("src\\Data\\Users.csv");
-        Scanner myReader = new Scanner(Users);
-        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
-
-        while (myReader.hasNextLine()) {
-
-            String data = myReader.nextLine();
-            String[] splitted = data.split(",");
-
-            if (splitted[0].contentEquals(userName)) {
-
-                int i = 1;
-                try {
-                    String line = r.readLine();
-                    while (line != null) {
-                        if (line.contains(userName) ) {
-//                            System.out.print("Line " + i + line); todo// print all lines
-                            return i;
-                        }
-                        line = r.readLine();
-                        i++;
-                    }
-                } finally {
-                    r.close();                                  // Free up file descriptor resources
-                }
-            }
-        }
-        return 0;
-    }
+//    public static int findCurrentLine(String userName) throws IOException {
+//
+//        File Users = new File("src\\Data\\Users.csv");
+//        Scanner myReader = new Scanner(Users);
+//        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
+//
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            String[] splitted = data.split(",");
+//
+//            if (splitted[0].contentEquals(userName)) {
+//
+//                int i = 1;
+//                try {
+//                    String line = r.readLine();
+//                    while (line != null) {
+//                        if (line.contains(userName) ) {
+////                            System.out.print("Line " + i + line); // print all lines
+//                            return i;
+//                        }
+//                        line = r.readLine();
+//                        i++;
+//                    }
+//                } finally {
+//                    r.close();                                  // Free up file descriptor resources
+//                }
+//            }
+//        }
+//        return 0;
+//    }
 }

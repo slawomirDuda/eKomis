@@ -9,7 +9,7 @@ public class TextInterface_UserPanel_2_Transactions {
         while (true) {
 
             Scanner myScanner = new Scanner(System.in);
-            System.out.println("TRANSACTIONS:");
+            System.out.println("TRANSACTIONS PANEL:");
             System.out.println("WORK IN PROGRESS...");
             System.out.println("Type 'B' to go back");
 

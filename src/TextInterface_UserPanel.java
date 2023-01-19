@@ -9,7 +9,7 @@ public class TextInterface_UserPanel {
 
         while (Objects.equals(userPanelResult, TextInterface_UserPanel.USER_PANEL_RESULT_WORKING) ) {
 
-//            TextInterface_UserPanel_1_YourOffers.yourOffersResult = TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_WORKING;
+            TextInterface_UserPanel_1_YourOffers.yourOffersResult = TextInterface_UserPanel_1_YourOffers.YOUR_OFFERS_RESULT_WORKING;
 //            TextInterface_UserPanel_2_Transactions.trasactionsResult = TextInterface_UserPanel_2_Transactions.TRANSACTIONS_RESULT_WORKING;
 //            TextInterface_UserPanel_3_SearchForOffers.searchForOffersResult = TextInterface_UserPanel_3_SearchForOffers.SEARCH_FOR_OFFERS_RESULT_WORKING;
             TextInterface_UserPanel_4_AccountSettings.accountSettingsResult = TextInterface_UserPanel_4_AccountSettings.ACCOUNT_SETTINGS_RESULT_WORKING;
