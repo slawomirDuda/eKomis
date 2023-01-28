@@ -15,7 +15,7 @@ public class TextInterface_UserPanel_3_SearchForOffers {
 
             BackEndMethods.showOthersOffers(Main.loggedUser);
 
-            System.out.print("Type 'B' to go back");
+            System.out.println("Type 'B' to go back");
 
             String index = "0";
 

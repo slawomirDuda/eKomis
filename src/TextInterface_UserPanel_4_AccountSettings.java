@@ -55,13 +55,8 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Set your new password:");
 
-//        try {
-            newPassword = myScanner.nextLine();
-//        } catch (NumberFormatException e) {        //todo czy to jest potrzebne ODP = NIEE, DO WYJEBANIA ZAKOMENTOWANE
-//            System.out.println("WRONG INPUT");
-//        }
+        newPassword = myScanner.nextLine();
 
-//        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
         BackEndMethods.overwriteData(Main.loggedUserLine, Main.loggedUser + "," + newPassword);
 
         System.out.println("Done. Your password will change after application restart.");
@@ -74,13 +69,8 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Set your new username:");
 
-//        try {
-            newUsername = myScanner.nextLine();
-//        } catch (NumberFormatException e) {
-//            System.out.println("WRONG INPUT");
-//        }
+        newUsername = myScanner.nextLine();
 
-//        int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
         BackEndMethods.overwriteData(Main.loggedUserLine, newUsername + "," + Main.loggedUserPassword);
 
         System.out.println("Done. Your username will change after application restart.");
@@ -93,11 +83,7 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         System.out.println("Are you sure? Y/N:");
 
-//        try {
-            userChoice = myScanner.nextLine();
-//        } catch (NumberFormatException e) {
-//            System.out.println("WRONG INPUT");
-//        }
+        userChoice = myScanner.nextLine();
 
         if ("Y".equals(userChoice)) {
 //            int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);

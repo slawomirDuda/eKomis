@@ -1,4 +1,4 @@
-
+username,price,brand,model,type,year,engine,fuelType,horsepower
 Darek,1000,Opel,Corsa,Hatchback,2001,1.0,Benzine,65
 Slawek,14900,Audi,A4,Wagon,1997,2.8,Benzine+LPG,193
 Kamil,15100,Hyundai,Tucson,SUV,2005,1.9,Diesel,98
