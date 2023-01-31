@@ -25,7 +25,6 @@ public class Main {
 //TODO
 // ZNAJDZ NA STRONIE INTELIJ SHORTCUTY, SCREEN NA 20 PRZYDATNYCH SHORTCUTOW
 // AJDIKI
-// dodac w csv nazwy kolumn i sprawic by logowanie nie dzialalno na username/password
 // przemapowac przetrzymywanie na obiekty, dla lepszego dostepu do danych
 // OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)
 // DOPRACOWAC DELETE ACCOUNT

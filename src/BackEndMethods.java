@@ -13,6 +13,7 @@ public class BackEndMethods {
         Scanner myReader = new Scanner(Users);
         int counter = 0;
 
+        myReader.nextLine();
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
             String[] splitted = data.split(",");
@@ -44,6 +45,7 @@ public class BackEndMethods {
         Scanner myReader = new Scanner(Users);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
+        myReader.nextLine();
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
