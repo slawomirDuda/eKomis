@@ -29,7 +29,7 @@ public class BackEndMethods {
 
         FileWriter myWriter = new FileWriter("src\\Data\\Users.csv", true);
         myWriter.write("\n" + userName + ",");
-        myWriter.write(password);
+        myWriter.write(password + "," + idGen("src\\Data\\Users.csv"));
         myWriter.close();
     }
     public static void overwriteData(int lineNumber, String data) throws IOException {
@@ -79,6 +79,20 @@ public class BackEndMethods {
             }
         }
     }
+
+    private static int idGen(String filepath) throws FileNotFoundException {
+        File Users = new File(filepath);
+        Scanner myReader = new Scanner(Users);
+        int counter = 0;
+
+        while (myReader.hasNextLine()) {
+            myReader.nextLine();
+            counter++;
+        }
+        return counter;
+//        System.out.println("Count : " + counter);
+    }
+
 
     //    public static void showOffers(String userName) throws IOException {
 //        BufferedReader reader = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));

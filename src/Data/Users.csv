@@ -1,4 +1,4 @@
-username,password
-Slawek,blabla
-Darek,otworz
-Kamil,jebacbiede
+username,password,user_id
+Slawek,blabla,1
+Darek,otworz,2
+Kamil,jebacbiede,3
