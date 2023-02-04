@@ -3,6 +3,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,7 +46,7 @@ public class BackEndMethods {
         Scanner myReader = new Scanner(Offers);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
-        myReader.nextLine();
+        //myReader.nextLine();       //todo tu do wyjebania??
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
@@ -68,6 +69,7 @@ public class BackEndMethods {
         Scanner myReader = new Scanner(Offers);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
+       // myReader.nextLine();       //todo a tu?
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
@@ -99,7 +101,7 @@ public class BackEndMethods {
         Scanner myReader = new Scanner(Offers);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
-        myReader.nextLine();
+//        myReader.nextLine();   todo//nie do konca czaje czemu to jest niepotrzebne
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
@@ -111,6 +113,26 @@ public class BackEndMethods {
             }
         }
         return null;
+    }
+
+    public static void updateOffer (Offer myOffer) {
+        String[] splitted = new String[10];
+        splitted[0] = myOffer.username;;
+        splitted[1] = String.valueOf(myOffer.price);
+        splitted[2] = myOffer.brand;
+        splitted[3] = myOffer.model;
+        splitted[4] = myOffer.type;
+        splitted[5] = String.valueOf(myOffer.year);
+        splitted[6] = String.valueOf(myOffer.engine);
+        splitted[7] = myOffer.fuelType;
+        splitted[8] = String.valueOf(myOffer.horsepower);
+        splitted[9] = String.valueOf(myOffer.offer_id);  // to jest final, nie do zmiany
+        Scanner myReader = new Scanner(Arrays.toString(splitted));
+        String line = Arrays.toString(splitted);
+        System.out.println(line);                        //skad te spacje do kurwy!!!???
+        String line2 = line.replaceAll(" ","");
+        System.out.println(line2);                       //po usunieciu spacji
+
     }
 
 

@@ -21,18 +21,19 @@ public class Main {
 //
 //            }
 //        }
-        String csvOffer = BackEndMethods.getOfferCsv("1");
+        String csvOffer = BackEndMethods.getOfferCsv("2");
 //        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
 //        Offer myOffer1 = new Offer("Slawek,14900,Audi,A4,Wagon,1997,2.8,Benzine+LPG,193,2");
         Offer myOffer1 = new Offer(csvOffer);
         System.out.println(myOffer1);
-//        myOffer1.model = "jebac";
-//        BackEndMethods.updateOffer(myOffer1);
+
+        myOffer1.model = "A6";
+        System.out.println(myOffer1);
+        BackEndMethods.updateOffer(myOffer1);
 
     }
 }
 // TODO
-//  ZNAJDZ NA STRONIE INTELIJ SHORTCUTY, SCREEN NA 20 PRZYDATNYCH SHORTCUTOW
 //  AJDIKI
 //  przemapowac przetrzymywanie na obiekty, dla lepszego dostepu do danych
 //  OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)
