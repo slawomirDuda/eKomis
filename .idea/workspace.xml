@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="19/01/23 update&#10;&#10;OFFERS - FIRST STEPS">
+    <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="26/01/23 update&#10;&#10;OFFERS - SHOW YOURS &amp; SHOW OTHERS">
+      <change afterPath="$PROJECT_DIR$/src/1-InteliJ shortcuts.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackEndMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackEndMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Data/Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Offers.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_1_YourOffers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_3_SearchForOffers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_3_SearchForOffers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextInterface_UserPanel_2_Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TextInterface_UserPanel_2_Transactions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +36,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -122,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674140099802</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="26/01/23 update&#10;&#10;OFFERS - SHOW YOURS &amp; SHOW OTHERS">
+      <created>1674750053066</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674750053066</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +154,7 @@
     <MESSAGE value="12/01/23 update&#10;&#10;LOOPS - DONE&#10;&#10;TO DO - DELETE PASSWORD" />
     <MESSAGE value="15/01/23 update&#10;&#10;LOOPS - DONE&#10;CHANGE PASSWORD - DONE&#10;CHANGE USERNAME - DONE&#10;DELETE ACCOUNT - DONE" />
     <MESSAGE value="19/01/23 update&#10;&#10;OFFERS - FIRST STEPS" />
-    <option name="LAST_COMMIT_MESSAGE" value="19/01/23 update&#10;&#10;OFFERS - FIRST STEPS" />
+    <MESSAGE value="26/01/23 update&#10;&#10;OFFERS - SHOW YOURS &amp; SHOW OTHERS" />
+    <option name="LAST_COMMIT_MESSAGE" value="26/01/23 update&#10;&#10;OFFERS - SHOW YOURS &amp; SHOW OTHERS" />
   </component>
 </project>

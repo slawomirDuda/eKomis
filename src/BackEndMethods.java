@@ -41,8 +41,8 @@ public class BackEndMethods {
     }
     public static void showYourOffers(String userName) throws IOException {
 
-        File Users = new File("src\\Data\\Offers.csv");
-        Scanner myReader = new Scanner(Users);
+        File Offers = new File("src\\Data\\Offers.csv");
+        Scanner myReader = new Scanner(Offers);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
         myReader.nextLine();
@@ -64,8 +64,8 @@ public class BackEndMethods {
     }
     public static void showOthersOffers(String userName) throws IOException {
 
-        File Users = new File("src\\Data\\Offers.csv");
-        Scanner myReader = new Scanner(Users);
+        File Offers = new File("src\\Data\\Offers.csv");
+        Scanner myReader = new Scanner(Offers);
         BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
 
         while (myReader.hasNextLine()) {
@@ -91,6 +91,26 @@ public class BackEndMethods {
         }
         return counter;
 //        System.out.println("Count : " + counter);
+    }
+
+    public static String getOfferCsv(String csv_offer_id) throws IOException {
+
+        File Offers = new File("src\\Data\\Offers.csv");
+        Scanner myReader = new Scanner(Offers);
+        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Offers.csv"));
+
+        myReader.nextLine();
+        while (myReader.hasNextLine()) {
+
+            String data = myReader.nextLine();
+            String[] splitted = data.split(",");
+            String line = r.readLine();
+
+            if (splitted[9].contentEquals(csv_offer_id)) {
+                return line;
+            }
+        }
+        return null;
     }
 
 

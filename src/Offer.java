@@ -11,7 +11,7 @@ public class Offer {
     public int horsepower;
     public int offer_id;
 
-    public Offer(String csvLine){
+    public Offer(String csvLine) {
         String[] splitted = csvLine.split(",");
         this.username = splitted[0];
         this.price = Integer.parseInt(splitted[1]);

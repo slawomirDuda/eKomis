@@ -5,6 +5,7 @@ public class Main {
     public static String loggedUser;
     public static String loggedUserPassword;
     public static int loggedUserLine;
+
     public static void main(String[] args) throws IOException {
 
 //        String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
@@ -20,13 +21,14 @@ public class Main {
 //
 //            }
 //        }
-        String csvOffer = BackEndMethods.getOfferCsv(id);
-        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
+        String csvOffer = BackEndMethods.getOfferCsv("1");
+//        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
 //        Offer myOffer1 = new Offer("Slawek,14900,Audi,A4,Wagon,1997,2.8,Benzine+LPG,193,2");
         Offer myOffer1 = new Offer(csvOffer);
         System.out.println(myOffer1);
 //        myOffer1.model = "jebac";
 //        BackEndMethods.updateOffer(myOffer1);
+
     }
 }
 // TODO
