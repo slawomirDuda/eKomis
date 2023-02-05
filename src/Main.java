@@ -21,14 +21,24 @@ public class Main {
 //
 //            }
 //        }
-        String csvOffer = BackEndMethods.getOfferCsv("2");
+        //users to object
+        System.out.println("USERS:");
+
+        String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
+        User myUser1 = new User(csvUser);                                    //Alt+shift+Enter = assert !=   ???
+        System.out.println("Main 27: " + myUser1);
+
+
+        //offers to object
+        System.out.println("OFFERS:");
+
+        String csvOffer = BackEndMethods.getOfferCsv(String.valueOf(2));
 //        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
-//        Offer myOffer1 = new Offer("Slawek,14900,Audi,A4,Wagon,1997,2.8,Benzine+LPG,193,2");
         Offer myOffer1 = new Offer(csvOffer);
-        System.out.println(myOffer1);
+        System.out.println("Main 33: " + myOffer1);
 
         myOffer1.model = "A6";
-        System.out.println(myOffer1);
+        System.out.println("Main 36: " + myOffer1);
         BackEndMethods.updateOffer(myOffer1);
 
     }

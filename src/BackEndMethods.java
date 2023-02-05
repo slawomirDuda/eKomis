@@ -3,6 +3,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -33,13 +34,14 @@ public class BackEndMethods {
         myWriter.write(password + "," + idGen("src\\Data\\Users.csv"));
         myWriter.close();
     }
-    public static void overwriteData(int lineNumber, String data) throws IOException {
+    public static void overwriteData(int lineNumber, String data, String filepath) throws IOException {
 
-        Path path = Paths.get("src\\Data\\Users.csv");
+        Path path = Paths.get(filepath);
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         lines.set(lineNumber - 1, data);
         Files.write(path, lines, StandardCharsets.UTF_8);
     }
+
     public static void showYourOffers(String userName) throws IOException {
 
         File Offers = new File("src\\Data\\Offers.csv");
@@ -114,8 +116,27 @@ public class BackEndMethods {
         }
         return null;
     }
+    public static String getUserCsv(String csv_user_id) throws IOException {
 
-    public static void updateOffer (Offer myOffer) {
+        File Users = new File("src\\Data\\Users.csv");
+        Scanner myReader = new Scanner(Users);
+        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
+
+//        myReader.nextLine();   //todo nie do konca czaje czemu to jest niepotrzebne
+        while (myReader.hasNextLine()) {
+
+            String data = myReader.nextLine();
+            String[] splitted = data.split(",");
+            String line = r.readLine();
+
+            if (splitted[2].contentEquals(csv_user_id)) {
+                return line;
+            }
+        }
+        return null;
+    }
+
+    public static void updateOffer (Offer myOffer) throws IOException {
         String[] splitted = new String[10];
         splitted[0] = myOffer.username;;
         splitted[1] = String.valueOf(myOffer.price);
@@ -127,12 +148,34 @@ public class BackEndMethods {
         splitted[7] = myOffer.fuelType;
         splitted[8] = String.valueOf(myOffer.horsepower);
         splitted[9] = String.valueOf(myOffer.offer_id);  // to jest final, nie do zmiany
-        Scanner myReader = new Scanner(Arrays.toString(splitted));
-        String line = Arrays.toString(splitted);
-        System.out.println(line);                        //skad te spacje do kurwy!!!???
-        String line2 = line.replaceAll(" ","");
-        System.out.println(line2);                       //po usunieciu spacji
 
+        String line = Arrays.toString(splitted);
+        System.out.println("BackEndMethods 152: " + line);                        //skad te spacje do kurwy!!!???
+        line = line.replaceAll(" ","");
+        line = line.replace("[", "");
+        line = line.replace("]", "");
+        System.out.println("BackEndMethods 156: " + line);                       //po usunieciu spacji i brackets
+
+        overwriteData(myOffer.offer_id + 1, line, "src\\Data\\Offers.csv");
+    }
+    public static void LoadUsers() throws IOException {
+
+        File Users = new File("src\\Data\\Users.csv");
+        Scanner myReader = new Scanner(Users);
+        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
+
+        while (myReader.hasNextLine()) {
+
+            String data = myReader.nextLine();
+            String[] splitted = data.split(",");
+            String line = r.readLine();
+
+            for (int i = 1 ) {
+                String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
+                User myUser1 = new User(csvUser);
+            }
+
+        }
     }
 
 

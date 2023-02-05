@@ -57,7 +57,7 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         newPassword = myScanner.nextLine();
 
-        BackEndMethods.overwriteData(Main.loggedUserLine, Main.loggedUser + "," + newPassword);
+        BackEndMethods.overwriteData(Main.loggedUserLine, Main.loggedUser + "," + newPassword, "src\\Data\\Users.csv");
 
         System.out.println("Done. Your password will change after application restart.");
     }
@@ -71,7 +71,7 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         newUsername = myScanner.nextLine();
 
-        BackEndMethods.overwriteData(Main.loggedUserLine, newUsername + "," + Main.loggedUserPassword);
+        BackEndMethods.overwriteData(Main.loggedUserLine, newUsername + "," + Main.loggedUserPassword,"src\\Data\\Users.csv");
 
         System.out.println("Done. Your username will change after application restart.");
     }
@@ -87,7 +87,7 @@ public class TextInterface_UserPanel_4_AccountSettings {
 
         if ("Y".equals(userChoice)) {
 //            int currentLine = BackEndMethods.findCurrentLine(Main.loggedUser);
-            BackEndMethods.overwriteData(Main.loggedUserLine, null);
+            BackEndMethods.overwriteData(Main.loggedUserLine, null,"src\\Data\\Users.csv");
             System.out.println("Done. Your account will be completely removed after application restart. ");
         } else if ("N".equals(userChoice)) {
             System.out.println("Keep browsing");
