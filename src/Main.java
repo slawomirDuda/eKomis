@@ -31,7 +31,7 @@ public class Main {
 //
 //        String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
 //        User myUser1 = new User(csvUser);                                    //Alt+shift+Enter = assert !=   ???
-//        System.out.println("Main 27: " + myUser1);
+//        System.out.println("Main 34: " + myUser1);
 //
 //
 //        //offers to object
@@ -40,23 +40,24 @@ public class Main {
 //        String csvOffer = BackEndMethods.getOfferCsv(String.valueOf(2));
 ////        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
 //        Offer myOffer1 = new Offer(csvOffer);
-//        System.out.println("Main 33: " + myOffer1);
+//        System.out.println("Main 43: " + myOffer1);
 //
 //        myOffer1.model = "A6";
-//        System.out.println("Main 36: " + myOffer1);
+//        System.out.println("Main 46: " + myOffer1);
 //        BackEndMethods.updateOffer(myOffer1);
 //        TextInterface_UserPanel.userPanelMainScreen();
 
         BackEndMethods.csvToObjects("src\\Data\\Offers.csv");
-//        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
+        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
 
-//        System.out.println(BackEndMethods.test());
+//        System.out.println(BackEndMethods.test("src\\Data\\Users.csv"));
+//        System.out.println(BackEndMethods.countLineBufferedReader("src\\Data\\Users.csv"));
     }
 }
 // TODO
 //  różnica miedzy readerami i scannerami
 //  przerobic na jednogo readera w backendmethods
-//  GetOfferCsv i GetUserCsv scalić i dać ajdiki na poczatek
+//  GetOfferCsv i GetUserCsv scalić(albo wyjebac) i dać ajdiki na poczatek
 //  AJDIKI
 //  przemapowac przetrzymywanie na obiekty, dla lepszego dostepu do danych
 //  OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)

@@ -107,7 +107,7 @@ public class BackEndMethods {
             String[] splitted = data.split(",");
             String line = r.readLine();
 
-            if (splitted[9].contentEquals(csv_offer_id)) {
+            if (splitted[0].contentEquals(csv_offer_id)) {
                 return line;
             }
         }
@@ -126,7 +126,7 @@ public class BackEndMethods {
             String[] splitted = data.split(",");
             String line = r.readLine();
 
-            if (splitted[2].contentEquals(csv_user_id)) {
+            if (splitted[0].contentEquals(csv_user_id)) {
                 return line;
             }
         }
@@ -162,27 +162,48 @@ public class BackEndMethods {
 
         HashMap<Integer, Offer> OffersMap = new HashMap<>();
         HashMap<Integer, User> UsersMap = new HashMap<>();
-
+        myReader.nextLine();
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
-
             if (filepath.equals("src\\Data\\Offers.csv")) {
                 Offer myOffer = new Offer(data);
                 OffersMap.put(myOffer.id, myOffer);
-                System.out.println(OffersMap);
 
             } else if (filepath.equals("src\\Data\\Users.csv")) {
                 User myUser = new User(data);
                 UsersMap.put(myUser.id, myUser);
-                System.out.println(UsersMap);
-
             }
         }
+    }
+
+    public static void test(String filepath) throws IOException {
+
+        File myFile = new File(filepath);
+        Scanner myReader = new Scanner(myFile);
+
+        HashMap<Integer, Offer> OffersMap = new HashMap<>();
+        HashMap<Integer, User> UsersMap = new HashMap<>();
+
+        for ( int i = 0 ; i < countLineBufferedReader(filepath) ; i++ ) {
+            String data = myReader.nextLine();
+            String csvUser = getUserCsv(String.valueOf(i));
+
+        }
+    }
+    public static long countLineBufferedReader(String fileName) {
+
+        long lines = 0;
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            while (reader.readLine() != null) lines++;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return lines;
 
     }
 
-    public static boolean test() throws IOException {
+    public static boolean testPRINT() throws IOException {
 
         File Offers = new File("src\\Data\\Offers.csv");
         Scanner myReader = new Scanner(Offers);

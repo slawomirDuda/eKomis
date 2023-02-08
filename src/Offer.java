@@ -6,12 +6,13 @@ public class Offer {
     private static final Map<String, Integer> OFFER_CSV_MAPPINGS = Map.ofEntries(
             entry("id", 0),
             entry("username", 1),
-            entry("price", 3),
-            entry("brand", 4),
-            entry("model", 5),
-            entry("type", 6),
-            entry("year", 7),
-            entry("engine", 8),
+            entry("price", 2),
+            entry("brand", 3),
+            entry("model", 4),
+            entry("type", 5),
+            entry("year", 6),
+            entry("engine", 7),
+            entry("fuelType", 8),
             entry("horsepower", 9)
     );
 
