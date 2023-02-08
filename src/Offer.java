@@ -1,5 +1,21 @@
-public class Offer {
+import java.util.Map;
 
+import static java.util.Map.entry;
+
+public class Offer {
+    private static final Map<String, Integer> OFFER_CSV_MAPPINGS = Map.ofEntries(
+            entry("id", 0),
+            entry("username", 1),
+            entry("price", 3),
+            entry("brand", 4),
+            entry("model", 5),
+            entry("type", 6),
+            entry("year", 7),
+            entry("engine", 8),
+            entry("horsepower", 9)
+    );
+
+    public int id;
     public String username;
     public int price;
     public String brand;
@@ -9,20 +25,19 @@ public class Offer {
     public float engine;
     public String fuelType;
     public int horsepower;
-    public int offer_id;
 
     public Offer(String csvLine) {
         String[] splitted = csvLine.split(",");
-        this.username = splitted[0];
-        this.price = Integer.parseInt(splitted[1]);
-        this.brand = splitted[2];
-        this.model = splitted[3];
-        this.type = splitted[4];
-        this.year = Integer.parseInt(splitted[5]);
-        this.engine = Float.parseFloat(splitted[6]);
-        this.fuelType = splitted[7];
-        this.horsepower = Integer.parseInt(splitted[8]);
-        this.offer_id = Integer.parseInt(splitted[9]);
+        this.id = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("id")]);
+        this.username = splitted[OFFER_CSV_MAPPINGS.get("username")];
+        this.price = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("price")]);
+        this.brand = splitted[OFFER_CSV_MAPPINGS.get("brand")];
+        this.model = splitted[OFFER_CSV_MAPPINGS.get("model")];
+        this.type = splitted[OFFER_CSV_MAPPINGS.get("type")];
+        this.year = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("year")]);
+        this.engine = Float.parseFloat(splitted[OFFER_CSV_MAPPINGS.get("engine")]);
+        this.fuelType = splitted[OFFER_CSV_MAPPINGS.get("fuelType")];
+        this.horsepower = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("horsepower")]);
     }
 
     @Override
@@ -37,7 +52,7 @@ public class Offer {
                 ", engine=" + engine +
                 ", fuelType='" + fuelType + '\'' +
                 ", horsepower=" + horsepower +
-                ", offer_id=" + offer_id +
+                ", offer_id=" + id +
                 '}';
     }
 }

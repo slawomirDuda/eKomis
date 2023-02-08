@@ -1,5 +1,8 @@
 import java.io.*;
+import java.util.Map;
 import java.util.Objects;
+
+import static java.util.Map.entry;
 
 public class Main {
     public static String loggedUser;
@@ -21,29 +24,39 @@ public class Main {
 //
 //            }
 //        }
-        //users to object
-        System.out.println("USERS:");
-
-        String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
-        User myUser1 = new User(csvUser);                                    //Alt+shift+Enter = assert !=   ???
-        System.out.println("Main 27: " + myUser1);
 
 
-        //offers to object
-        System.out.println("OFFERS:");
+//        //users to object
+//        System.out.println("USERS:");
+//
+//        String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
+//        User myUser1 = new User(csvUser);                                    //Alt+shift+Enter = assert !=   ???
+//        System.out.println("Main 27: " + myUser1);
+//
+//
+//        //offers to object
+//        System.out.println("OFFERS:");
+//
+//        String csvOffer = BackEndMethods.getOfferCsv(String.valueOf(2));
+////        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
+//        Offer myOffer1 = new Offer(csvOffer);
+//        System.out.println("Main 33: " + myOffer1);
+//
+//        myOffer1.model = "A6";
+//        System.out.println("Main 36: " + myOffer1);
+//        BackEndMethods.updateOffer(myOffer1);
+//        TextInterface_UserPanel.userPanelMainScreen();
 
-        String csvOffer = BackEndMethods.getOfferCsv(String.valueOf(2));
-//        String csvOffer2 = BackEndMethods.getOffersCsvs(username);
-        Offer myOffer1 = new Offer(csvOffer);
-        System.out.println("Main 33: " + myOffer1);
+        BackEndMethods.csvToObjects("src\\Data\\Offers.csv");
+//        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
 
-        myOffer1.model = "A6";
-        System.out.println("Main 36: " + myOffer1);
-        BackEndMethods.updateOffer(myOffer1);
-
+//        System.out.println(BackEndMethods.test());
     }
 }
 // TODO
+//  różnica miedzy readerami i scannerami
+//  przerobic na jednogo readera w backendmethods
+//  GetOfferCsv i GetUserCsv scalić i dać ajdiki na poczatek
 //  AJDIKI
 //  przemapowac przetrzymywanie na obiekty, dla lepszego dostepu do danych
 //  OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)

@@ -3,10 +3,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class BackEndMethods {
     public static String[] findUser(String userName) throws FileNotFoundException {
@@ -147,7 +144,7 @@ public class BackEndMethods {
         splitted[6] = String.valueOf(myOffer.engine);
         splitted[7] = myOffer.fuelType;
         splitted[8] = String.valueOf(myOffer.horsepower);
-        splitted[9] = String.valueOf(myOffer.offer_id);  // to jest final, nie do zmiany
+        splitted[9] = String.valueOf(myOffer.id);  // to jest final, nie do zmiany
 
         String line = Arrays.toString(splitted);
         System.out.println("BackEndMethods 152: " + line);                        //skad te spacje do kurwy!!!???
@@ -156,26 +153,46 @@ public class BackEndMethods {
         line = line.replace("]", "");
         System.out.println("BackEndMethods 156: " + line);                       //po usunieciu spacji i brackets
 
-        overwriteData(myOffer.offer_id + 1, line, "src\\Data\\Offers.csv");
+        overwriteData(myOffer.id + 1, line, "src\\Data\\Offers.csv");
     }
-    public static void LoadUsers() throws IOException {
+    public static void csvToObjects(String filepath) throws IOException {
 
-        File Users = new File("src\\Data\\Users.csv");
-        Scanner myReader = new Scanner(Users);
-        BufferedReader r = new BufferedReader(new FileReader("src\\Data\\Users.csv"));
+        File myFile = new File(filepath);
+        Scanner myReader = new Scanner(myFile);
+
+        HashMap<Integer, Offer> OffersMap = new HashMap<>();
+        HashMap<Integer, User> UsersMap = new HashMap<>();
 
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
-            String[] splitted = data.split(",");
-            String line = r.readLine();
 
-            for (int i = 1 ) {
-                String csvUser = BackEndMethods.getUserCsv(String.valueOf(1));
-                User myUser1 = new User(csvUser);
+            if (filepath.equals("src\\Data\\Offers.csv")) {
+                Offer myOffer = new Offer(data);
+                OffersMap.put(myOffer.id, myOffer);
+                System.out.println(OffersMap);
+
+            } else if (filepath.equals("src\\Data\\Users.csv")) {
+                User myUser = new User(data);
+                UsersMap.put(myUser.id, myUser);
+                System.out.println(UsersMap);
+
             }
-
         }
+
+    }
+
+    public static boolean test() throws IOException {
+
+        File Offers = new File("src\\Data\\Offers.csv");
+        Scanner myReader = new Scanner(Offers);
+
+        while (myReader.hasNextLine()) {
+
+            String data = myReader.nextLine();
+            System.out.println(data);
+        }
+        return false;
     }
 
 

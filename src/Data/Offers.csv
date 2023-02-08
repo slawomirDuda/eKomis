@@ -1,7 +1,7 @@
-username,price,brand,model,type,year,engine,fuelType,horsepower,offer_id
-Darek,1000,Opel,Corsa,Hatchback,2001,1.0,Benzine,65,1
-Slawek,14900,Audi,A6,Wagon,1997,2.8,Benzine+LPG,193,2
-Kamil,15100,Hyundai,Tucson,SUV,2005,1.9,Diesel,98,3
-Kamil,4200,Peugeot,406,Sedan,1998,2.0,Benzine,120,4
-Darek,5500,Opel,Astra,Wagon,2010,1.9,Diesel,96,5
-Slawek,39500,BMW,E36,Coupe,1993,2.5,Benzine,420,6
+id,username,price,brand,model,type,year,engine,fuelType,horsepower
+1,Darek,1000,Opel,Corsa,Hatchback,2001,1.0,Benzine,65
+2,Slawek,14900,Audi,A6,Wagon,1997,2.8,Benzine+LPG,193
+3,Kamil,15100,Hyundai,Tucson,SUV,2005,1.9,Diesel,98
+4,Kamil,4200,Peugeot,406,Sedan,1998,2.0,Benzine,120
+5,Darek,5500,Opel,Astra,Wagon,2010,1.9,Diesel,96
+6,Slawek,39500,BMW,E36,Coupe,1993,2.5,Benzine,420

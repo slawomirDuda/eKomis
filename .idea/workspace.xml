@@ -7,7 +7,11 @@
     <list default="true" id="e6d9afe2-f65f-4dfd-a7c6-dd4e1aaee5ff" name="Changes" comment="04/02/23&#10;OFFERS TO OBJECTS - IN PROGRESS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BackEndMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackEndMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Offers.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Offers.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Data/Users.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/Data/Users.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,5 +165,15 @@
     <MESSAGE value="26/01/23 update&#10;&#10;OFFERS - SHOW YOURS &amp; SHOW OTHERS" />
     <MESSAGE value="04/02/23&#10;OFFERS TO OBJECTS - IN PROGRESS" />
     <option name="LAST_COMMIT_MESSAGE" value="04/02/23&#10;OFFERS TO OBJECTS - IN PROGRESS" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
