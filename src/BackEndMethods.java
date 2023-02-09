@@ -132,89 +132,110 @@ public class BackEndMethods {
         }
         return null;
     }
-
-    public static void updateOffer (Offer myOffer) throws IOException {
-        String[] splitted = new String[10];
-        splitted[0] = myOffer.username;;
-        splitted[1] = String.valueOf(myOffer.price);
-        splitted[2] = myOffer.brand;
-        splitted[3] = myOffer.model;
-        splitted[4] = myOffer.type;
-        splitted[5] = String.valueOf(myOffer.year);
-        splitted[6] = String.valueOf(myOffer.engine);
-        splitted[7] = myOffer.fuelType;
-        splitted[8] = String.valueOf(myOffer.horsepower);
-        splitted[9] = String.valueOf(myOffer.id);  // to jest final, nie do zmiany
-
-        String line = Arrays.toString(splitted);
-        System.out.println("BackEndMethods 152: " + line);                        //skad te spacje do kurwy!!!???
-        line = line.replaceAll(" ","");
-        line = line.replace("[", "");
-        line = line.replace("]", "");
-        System.out.println("BackEndMethods 156: " + line);                       //po usunieciu spacji i brackets
-
-        overwriteData(myOffer.id + 1, line, "src\\Data\\Offers.csv");
+    public static void updateCSV (int id, String csvLine, String filepath) throws IOException {
+        overwriteData(findCurrentLine(id,filepath), csvLine, filepath);
     }
-    public static void csvToObjects(String filepath) throws IOException {
 
-        File myFile = new File(filepath);
-        Scanner myReader = new Scanner(myFile);
+    public static int findCurrentLine(int id, String filepath) throws IOException {
 
-        HashMap<Integer, Offer> OffersMap = new HashMap<>();
-        HashMap<Integer, User> UsersMap = new HashMap<>();
-        myReader.nextLine();
+        File Users = new File(filepath);
+        Scanner myReader = new Scanner(Users);
+        int counter = 0;
+
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
-            if (filepath.equals("src\\Data\\Offers.csv")) {
-                Offer myOffer = new Offer(data);
-                OffersMap.put(myOffer.id, myOffer);
-
-            } else if (filepath.equals("src\\Data\\Users.csv")) {
-                User myUser = new User(data);
-                UsersMap.put(myUser.id, myUser);
+            String[] splitted = data.split(",");
+            counter++;
+            if (splitted[0].contentEquals(String.valueOf(id))) {
+                return counter;
             }
         }
+        return 0;
     }
 
-    public static void test(String filepath) throws IOException {
+//    public static void updateOffer (Offer myOffer) throws IOException {
+//        String[] splitted = new String[10];
+//        splitted[0] = myOffer.username;;
+//        splitted[1] = String.valueOf(myOffer.price);
+//        splitted[2] = myOffer.brand;
+//        splitted[3] = myOffer.model;
+//        splitted[4] = myOffer.type;
+//        splitted[5] = String.valueOf(myOffer.year);
+//        splitted[6] = String.valueOf(myOffer.engine);
+//        splitted[7] = myOffer.fuelType;
+//        splitted[8] = String.valueOf(myOffer.horsepower);
+//        splitted[9] = String.valueOf(myOffer.id);  // to jest final, nie do zmiany
+//
+//        String line = Arrays.toString(splitted);
+//        System.out.println("BackEndMethods 152: " + line);                        //skad te spacje do kurwy!!!???
+//        line = line.replaceAll(" ","");
+//        line = line.replace("[", "");
+//        line = line.replace("]", "");
+//        System.out.println("BackEndMethods 156: " + line);                       //po usunieciu spacji i brackets
+//
+//        overwriteData(myOffer.id + 1, line, "src\\Data\\Offers.csv");
+//    }
+//    public static void csvToObjects(String filepath) throws IOException {
+//
+//        File myFile = new File(filepath);
+//        Scanner myReader = new Scanner(myFile);
+//
+//        HashMap<Integer, Offer> OffersMap = new HashMap<>();
+//        HashMap<Integer, User> UsersMap = new HashMap<>();
+//        myReader.nextLine();
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            if (filepath.equals("src\\Data\\Offers.csv")) {
+//                Offer myOffer = new Offer(data);
+//                OffersMap.put(myOffer.id, myOffer);
+//
+//            } else if (filepath.equals("src\\Data\\Users.csv")) {
+//                User myUser = new User(data);
+//                UsersMap.put(myUser.id, myUser);
+//            }
+//        }
+//    }
 
-        File myFile = new File(filepath);
-        Scanner myReader = new Scanner(myFile);
-
-        HashMap<Integer, Offer> OffersMap = new HashMap<>();
-        HashMap<Integer, User> UsersMap = new HashMap<>();
-
-        for ( int i = 0 ; i < countLineBufferedReader(filepath) ; i++ ) {
-            String data = myReader.nextLine();
-            String csvUser = getUserCsv(String.valueOf(i));
-
-        }
-    }
-    public static long countLineBufferedReader(String fileName) {
-
-        long lines = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-            while (reader.readLine() != null) lines++;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return lines;
-
-    }
-
-    public static boolean testPRINT() throws IOException {
-
-        File Offers = new File("src\\Data\\Offers.csv");
-        Scanner myReader = new Scanner(Offers);
-
-        while (myReader.hasNextLine()) {
-
-            String data = myReader.nextLine();
-            System.out.println(data);
-        }
-        return false;
-    }
+//    public static void test(String filepath) throws IOException {
+//
+//        File myFile = new File(filepath);
+//        Scanner myReader = new Scanner(myFile);
+//
+//        HashMap<Integer, Offer> OffersMap = new HashMap<>();
+//        HashMap<Integer, User> UsersMap = new HashMap<>();
+//
+//        for ( int i = 0 ; i < countLineBufferedReader(filepath) ; i++ ) {
+//            String data = myReader.nextLine();
+//            String csvUser = getUserCsv(String.valueOf(i));
+//
+//        }
+//    }
+//    public static long countLineBufferedReader(String fileName) {
+//
+//        long lines = 0;
+//        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+//            while (reader.readLine() != null) lines++;
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        return lines;
+//
+//    }
+//
+//    public static boolean testPRINT() throws IOException {
+//
+//        File Offers = new File("src\\Data\\Offers.csv");
+//        Scanner myReader = new Scanner(Offers);
+//
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            System.out.println(data);
+//        }
+//        return false;
+//    }
 
 
     //    public static void showOffers(String userName) throws IOException {

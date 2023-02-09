@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.Map;
 import java.util.Objects;
-
-import static java.util.Map.entry;
 
 public class Main {
     public static String loggedUser;
@@ -11,19 +8,20 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
-
-        while ( ! Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION)) {
-
-            loginResult = TextInterface_Login.loginMainScreen();
-            TextInterface_UserPanel.userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_WORKING;
-
-            if (Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS)) {
-
-                TextInterface_UserPanel.userPanelMainScreen();
-
-            }
-        }
+//        String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
+//
+//        while ( ! Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION)) {
+//
+//            loginResult = TextInterface_Login.loginMainScreen();
+//            TextInterface_UserPanel.userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_WORKING;
+//
+//            if (Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS)) {
+//
+//                TextInterface_UserPanel.userPanelMainScreen();
+//
+//            }
+//        }
+        System.out.println(BackEndMethods.findCurrentLine(3,Offer.FILEPATH));
 
 
 //        //users to object
@@ -45,7 +43,7 @@ public class Main {
 //        myOffer1.model = "A6";
 //        System.out.println("Main 46: " + myOffer1);
 //        BackEndMethods.updateOffer(myOffer1);
-//        TextInterface_UserPanel.userPanelMainScreen();
+////        TextInterface_UserPanel.userPanelMainScreen();
 
 //        BackEndMethods.csvToObjects("src\\Data\\Offers.csv");
 //        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
@@ -55,6 +53,7 @@ public class Main {
     }
 }
 // TODO
+//  scalic overwrite i update do jednej metody i sprawic zeby update mogl dzialac dla kazdego obiektu
 //  rozdzielic metode login
 //  dodac final stringi do nazw kolumn CSV w klasach Offer i User
 //  różnica miedzy readerami i scannerami
