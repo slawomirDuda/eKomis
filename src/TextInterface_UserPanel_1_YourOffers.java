@@ -28,18 +28,17 @@ public class TextInterface_UserPanel_1_YourOffers {
             }
 
             switch (index) {
-                case 1:
+                case 1 -> {
                     System.out.println("Adding Offer");
-                    continue;
-                case 2:
+                }
+                case 2 -> {
                     showOffersProcedure();
-                    continue;
-                case 3:
-                    yourOffersResult = YOUR_OFFERS_RESULT_GO_BACK;
-                    break;
-                default:
+                }
+                case 3 -> yourOffersResult = YOUR_OFFERS_RESULT_GO_BACK;
+                default -> {
                     System.out.println("WRONG INDEX NUMBER");
                     yourOffersResult = YOUR_OFFERS_RESULT_WORKING;
+                }
             }
         }
     }

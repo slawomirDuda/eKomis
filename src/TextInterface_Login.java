@@ -63,7 +63,7 @@ public class TextInterface_Login {
         if(splitted != null){
             System.out.println("Enter Password:");
             String password = myScanner.nextLine();
-            if(splitted[1].contentEquals(password)){
+            if(splitted[User.USER_CSV_MAPPINGS.get(User.PASSWORD_COLUMN_NAME)].contentEquals(password)){
                 System.out.println("Access Granted");
                 Main.loggedUser = userName;
                 Main.loggedUserPassword = password;

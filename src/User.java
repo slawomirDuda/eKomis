@@ -3,10 +3,13 @@ import java.util.Map;
 import static java.util.Map.entry;
 
 public class User {
-    private static final Map<String, Integer> USER_CSV_MAPPINGS = Map.ofEntries(
-            entry("id", 0),
-            entry("username", 1),
-            entry("password", 2)
+    public static final String ID_COLUMN_NAME = "id";
+    public static final String USERNAME_COLUMN_NAME = "username";
+    public static final String PASSWORD_COLUMN_NAME = "password";
+    public static final Map<String, Integer> USER_CSV_MAPPINGS = Map.ofEntries(
+            entry(ID_COLUMN_NAME, 0),
+            entry(USERNAME_COLUMN_NAME, 1),
+            entry(PASSWORD_COLUMN_NAME, 2)
     );
 
     public int id;
@@ -31,7 +34,7 @@ public class User {
         return "User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", user_id=" + id +
+                ", id=" + id +
                 '}';
     }
 }

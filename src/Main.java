@@ -11,19 +11,19 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-//        String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
-//
-//        while ( ! Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION)) {
-//
-//            loginResult = TextInterface_Login.loginMainScreen();
-//            TextInterface_UserPanel.userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_WORKING;
-//
-//            if (Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS)) {
-//
-//                TextInterface_UserPanel.userPanelMainScreen();
-//
-//            }
-//        }
+        String loginResult = TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
+
+        while ( ! Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_EXIT_APPLICATION)) {
+
+            loginResult = TextInterface_Login.loginMainScreen();
+            TextInterface_UserPanel.userPanelResult = TextInterface_UserPanel.USER_PANEL_RESULT_WORKING;
+
+            if (Objects.equals(loginResult, TextInterface_Login.LOGIN_SCREEN_RESULT_LOGIN_SUCCESS)) {
+
+                TextInterface_UserPanel.userPanelMainScreen();
+
+            }
+        }
 
 
 //        //users to object
@@ -47,14 +47,16 @@ public class Main {
 //        BackEndMethods.updateOffer(myOffer1);
 //        TextInterface_UserPanel.userPanelMainScreen();
 
-        BackEndMethods.csvToObjects("src\\Data\\Offers.csv");
-        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
+//        BackEndMethods.csvToObjects("src\\Data\\Offers.csv");
+//        BackEndMethods.csvToObjects("src\\Data\\Users.csv");
 
 //        System.out.println(BackEndMethods.test("src\\Data\\Users.csv"));
 //        System.out.println(BackEndMethods.countLineBufferedReader("src\\Data\\Users.csv"));
     }
 }
 // TODO
+//  rozdzielic metode login
+//  dodac final stringi do nazw kolumn CSV w klasach Offer i User
 //  różnica miedzy readerami i scannerami
 //  przerobic na jednogo readera w backendmethods
 //  GetOfferCsv i GetUserCsv scalić(albo wyjebac) i dać ajdiki na poczatek

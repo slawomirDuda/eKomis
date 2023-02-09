@@ -17,7 +17,7 @@ public class BackEndMethods {
             String data = myReader.nextLine();
             String[] splitted = data.split(",");
             counter++;
-            if (splitted[0].contentEquals(userName)) {
+            if (splitted[User.USER_CSV_MAPPINGS.get(User.USERNAME_COLUMN_NAME)].contentEquals(userName)) {
                 Main.loggedUserLine = counter;
                 return splitted;
             }
@@ -126,7 +126,7 @@ public class BackEndMethods {
             String[] splitted = data.split(",");
             String line = r.readLine();
 
-            if (splitted[0].contentEquals(csv_user_id)) {
+            if (splitted[User.USER_CSV_MAPPINGS.get(User.ID_COLUMN_NAME)].contentEquals(csv_user_id)) {
                 return line;
             }
         }
