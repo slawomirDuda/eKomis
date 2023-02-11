@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.Objects;
 import java.util.Scanner;
 public class TextInterface_UserPanel_3_SearchForOffers {
 
@@ -11,9 +10,9 @@ public class TextInterface_UserPanel_3_SearchForOffers {
         while (true) {
 
             Scanner myScanner = new Scanner(System.in);
-            System.out.print("SEARCH FOR OFFERS:");
+            System.out.println("SEARCH FOR OFFERS:");
 
-            BackEndMethods.showOthersOffers(Main.loggedUser);
+            BackEndMethods.showOthersOffersCSV();
 
             System.out.println("Type 'B' to go back");
 

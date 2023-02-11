@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 
@@ -6,18 +5,28 @@ import static java.util.Map.entry;
 
 public class Offer implements ObjectToCSV {
 
+    public static final String ID_COLUMN_NAME = "id";
+    public static final String USERNAME_COLUMN_NAME = "username";
+    public static final String PRICE_COLUMN_NAME = "price";
+    public static final String BRAND_COLUMN_NAME = "brand";
+    public static final String MODEL_COLUMN_NAME = "model";
+    public static final String TYPE_COLUMN_NAME = "type";
+    public static final String YEAR_COLUMN_NAME = "year";
+    public static final String ENGINE_COLUMN_NAME = "engine";
+    public static final String FUELTYPE_COLUMN_NAME = "fueltype";
+    public static final String HORSEPOWER_COLUMN_NAME = "horsepower";
     public static final String FILEPATH = "src\\Data\\Offers.csv";
-    private static final Map<String, Integer> OFFER_CSV_MAPPINGS = Map.ofEntries(
-            entry("id", 0),
-            entry("username", 1),
-            entry("price", 2),
-            entry("brand", 3),
-            entry("model", 4),
-            entry("type", 5),
-            entry("year", 6),
-            entry("engine", 7),
-            entry("fuelType", 8),
-            entry("horsepower", 9)
+    public static final Map<String, Integer> OFFER_CSV_MAPPINGS = Map.ofEntries(
+            entry(ID_COLUMN_NAME, 0),
+            entry(USERNAME_COLUMN_NAME, 1),
+            entry(PRICE_COLUMN_NAME, 2),
+            entry(BRAND_COLUMN_NAME, 3),
+            entry(MODEL_COLUMN_NAME, 4),
+            entry(TYPE_COLUMN_NAME, 5),
+            entry(YEAR_COLUMN_NAME, 6),
+            entry(ENGINE_COLUMN_NAME, 7),
+            entry(FUELTYPE_COLUMN_NAME, 8),
+            entry(HORSEPOWER_COLUMN_NAME, 9)
     );
 
     public final int id;
@@ -31,18 +40,19 @@ public class Offer implements ObjectToCSV {
     public String fuelType;
     public int horsepower;
 
-    public Offer(String csvLine) {
+    public Offer (String csvLine) {
+
         String[] splitted = csvLine.split(",");
-        this.id = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("id")]);
-        this.username = splitted[OFFER_CSV_MAPPINGS.get("username")];
-        this.price = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("price")]);
-        this.brand = splitted[OFFER_CSV_MAPPINGS.get("brand")];
-        this.model = splitted[OFFER_CSV_MAPPINGS.get("model")];
-        this.type = splitted[OFFER_CSV_MAPPINGS.get("type")];
-        this.year = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("year")]);
-        this.engine = Float.parseFloat(splitted[OFFER_CSV_MAPPINGS.get("engine")]);
-        this.fuelType = splitted[OFFER_CSV_MAPPINGS.get("fuelType")];
-        this.horsepower = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get("horsepower")]);
+        this.id = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(ID_COLUMN_NAME)]);
+        this.username = splitted[OFFER_CSV_MAPPINGS.get(USERNAME_COLUMN_NAME)];
+        this.price = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(PRICE_COLUMN_NAME)]);
+        this.brand = splitted[OFFER_CSV_MAPPINGS.get(BRAND_COLUMN_NAME)];
+        this.model = splitted[OFFER_CSV_MAPPINGS.get(MODEL_COLUMN_NAME)];
+        this.type = splitted[OFFER_CSV_MAPPINGS.get(TYPE_COLUMN_NAME)];
+        this.year = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(YEAR_COLUMN_NAME)]);
+        this.engine = Float.parseFloat(splitted[OFFER_CSV_MAPPINGS.get(ENGINE_COLUMN_NAME)]);
+        this.fuelType = splitted[OFFER_CSV_MAPPINGS.get(FUELTYPE_COLUMN_NAME)];
+        this.horsepower = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(HORSEPOWER_COLUMN_NAME)]);
     }
 
     @Override
@@ -62,6 +72,7 @@ public class Offer implements ObjectToCSV {
     }
     @Override
     public String getObjectAsCSVLine() {
+
         String[] splitted = new String[10];
         splitted[0] = this.username;
         splitted[1] = String.valueOf(this.price);

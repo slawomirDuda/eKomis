@@ -47,7 +47,7 @@ public class TextInterface_UserPanel_1_YourOffers {
         while(true){
 
             System.out.println("YOUR OFFERS:");
-            BackEndMethods.showYourOffers(Main.loggedUser);
+            BackEndMethods.showYourOffersCSV();
 
             System.out.println("Type 'B' to go back");
             Scanner myScanner = new Scanner(System.in);
