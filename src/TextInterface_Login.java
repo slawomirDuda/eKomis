@@ -1,3 +1,5 @@
+import Objects.User;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -56,19 +58,44 @@ public class TextInterface_Login {
         }
     }
 
+//    public static String logInCSV() throws FileNotFoundException {
+//
+//        Scanner myScanner = new Scanner(System.in);
+//        System.out.println("Enter Username:" );
+//        String username = myScanner.nextLine();
+//        String[] splitted = BackEndMethods.findUserCSV(username);
+//
+//        if (splitted != null) {
+//
+//            System.out.println("Enter Password:" );
+//            String password = myScanner.nextLine();
+//
+//            if (splitted[Objects.User.USER_CSV_MAPPINGS.get(Objects.User.PASSWORD_COLUMN_NAME)].contentEquals(password)) {
+//                System.out.println("Access Granted" );
+//                Main.loggedUser = username;
+//                Main.loggedUserPassword = password;
+//                return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
+//            } else {
+//                System.out.println("Wrong Password" );
+//            }
+//        } else {
+//            System.out.println("Objects.User name not found" );
+//        }
+//        return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
+//    }
     public static String logIn() throws FileNotFoundException {
 
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Enter Username:" );
         String username = myScanner.nextLine();
-        String[] splitted = BackEndMethods.findUser(username);
+        User foundUser = BackEndMethods.findUser(username);
 
-        if (splitted != null) {
+        if (foundUser != null) {
 
             System.out.println("Enter Password:" );
             String password = myScanner.nextLine();
 
-            if (splitted[User.USER_CSV_MAPPINGS.get(User.PASSWORD_COLUMN_NAME)].contentEquals(password)) {
+            if (foundUser.password.contentEquals(password)) {
                 System.out.println("Access Granted" );
                 Main.loggedUser = username;
                 Main.loggedUserPassword = password;
@@ -77,7 +104,7 @@ public class TextInterface_Login {
                 System.out.println("Wrong Password" );
             }
         } else {
-            System.out.println("User name not found" );
+            System.out.println("Objects.User name not found" );
         }
         return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
     }

@@ -1,3 +1,5 @@
+package Objects;
+
 import java.util.Arrays;
 import java.util.Map;
 
@@ -30,7 +32,7 @@ public class User implements ObjectToCSV {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Objects.User{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", id=" + id +

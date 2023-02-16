@@ -1,3 +1,5 @@
+package Objects;
+
 import java.util.Arrays;
 import java.util.Map;
 
@@ -6,7 +8,7 @@ import static java.util.Map.entry;
 public class Offer implements ObjectToCSV {
 
     public static final String ID_COLUMN_NAME = "id";
-    public static final String USERNAME_COLUMN_NAME = "username";
+    public static final String USERNAME_ID_COLUMN_NAME = "username_id";
     public static final String PRICE_COLUMN_NAME = "price";
     public static final String BRAND_COLUMN_NAME = "brand";
     public static final String MODEL_COLUMN_NAME = "model";
@@ -18,7 +20,7 @@ public class Offer implements ObjectToCSV {
     public static final String FILEPATH = "src\\Data\\Offers.csv";
     public static final Map<String, Integer> OFFER_CSV_MAPPINGS = Map.ofEntries(
             entry(ID_COLUMN_NAME, 0),
-            entry(USERNAME_COLUMN_NAME, 1),
+            entry(USERNAME_ID_COLUMN_NAME, 1),
             entry(PRICE_COLUMN_NAME, 2),
             entry(BRAND_COLUMN_NAME, 3),
             entry(MODEL_COLUMN_NAME, 4),
@@ -30,7 +32,7 @@ public class Offer implements ObjectToCSV {
     );
 
     public final int id;
-    public String username;
+    public int username_id;
     public int price;
     public String brand;
     public String model;
@@ -44,7 +46,7 @@ public class Offer implements ObjectToCSV {
 
         String[] splitted = csvLine.split(",");
         this.id = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(ID_COLUMN_NAME)]);
-        this.username = splitted[OFFER_CSV_MAPPINGS.get(USERNAME_COLUMN_NAME)];
+        this.username_id = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(USERNAME_ID_COLUMN_NAME)]);
         this.price = Integer.parseInt(splitted[OFFER_CSV_MAPPINGS.get(PRICE_COLUMN_NAME)]);
         this.brand = splitted[OFFER_CSV_MAPPINGS.get(BRAND_COLUMN_NAME)];
         this.model = splitted[OFFER_CSV_MAPPINGS.get(MODEL_COLUMN_NAME)];
@@ -57,9 +59,10 @@ public class Offer implements ObjectToCSV {
 
     @Override
     public String toString() {
-        return "Offer{" +
-                "username='" + username + '\'' +
-                ", price=" + price +
+        return "Objects.Offer{" +
+//                "offer_id=" + id +
+//                ", username_id='" + username_id + '\'' +
+                "price=" + price +
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", type='" + type + '\'' +
@@ -67,14 +70,13 @@ public class Offer implements ObjectToCSV {
                 ", engine=" + engine +
                 ", fuelType='" + fuelType + '\'' +
                 ", horsepower=" + horsepower +
-                ", offer_id=" + id +
                 '}';
     }
     @Override
     public String getObjectAsCSVLine() {
 
         String[] splitted = new String[10];
-        splitted[0] = this.username;
+        splitted[0] = String.valueOf(this.username_id);
         splitted[1] = String.valueOf(this.price);
         splitted[2] = this.brand;
         splitted[3] = this.model;

@@ -16,7 +16,7 @@ public class TextInterface_UserPanel {
 
             Scanner myScanner = new Scanner(System.in);
 
-            System.out.println("Logged User: " + Main.loggedUser);
+            System.out.println("Logged Objects.User: " + Main.loggedUser);
             System.out.println("USER PANEL:");
             System.out.println("1.Your offers");
             System.out.println("2.Transactions");

@@ -4,9 +4,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import Objects.*;
 
 public class BackEndMethods {
-    public static String[] findUser(String username) throws FileNotFoundException {
+    public static String[] findUserCSV(String username) throws FileNotFoundException {
 
         File Users = new File(User.FILEPATH);
         Scanner myReader = new Scanner(Users);
@@ -19,12 +20,22 @@ public class BackEndMethods {
             counter++;
             if (splitted[User.USER_CSV_MAPPINGS.get(User.USERNAME_COLUMN_NAME)].contentEquals(username)) {
                 Main.loggedUserLine = counter;
+                Main.loggedUserID = Integer.parseInt(splitted[0]);
                 return splitted;
             }
         }
         return null;
     }
+    public static User findUser(String username) throws FileNotFoundException {
 
+        for (User myUser : DataBase.UsersMap.values()){
+            if (Objects.equals(myUser.username, username)){
+                Main.loggedUserID = myUser.id;
+                return myUser;
+            }
+        }
+        return null;
+    }
     public static void createUser(String username, String password) throws IOException {
 
         FileWriter myWriter = new FileWriter(User.FILEPATH, true);
@@ -46,12 +57,8 @@ public class BackEndMethods {
         return counter;
     }
 
-    public static void updateCSV(int id, String csvLine, String filepath) throws IOException {
-        overwriteData(findCurrentLine(id, filepath), csvLine, filepath);
-    }
-
-    public static void overwriteData(int lineNumber, String data, String filepath) throws IOException {
-
+    public static void updateCSV(int id, String data, String filepath) throws IOException {
+        int lineNumber = findCurrentLine(id,filepath);
         Path path = Paths.get(filepath);
         List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
         lines.set(lineNumber - 1, data);
@@ -75,92 +82,104 @@ public class BackEndMethods {
         }
         return 0;
     }
-    public static String getCsvLine(int id, String filepath) throws IOException {
-
-        File Users = new File(filepath);
-        Scanner myReader = new Scanner(Users);
-
-        while (myReader.hasNextLine()) {
-
-            String data = myReader.nextLine();
-            String[] splitted = data.split("," );
-
-            if (splitted[0].contentEquals(String.valueOf(id))) {
-                return data;
-            }
-        }
-        return null;
-    }
-
-    public static void csvToObjects(String filepath) throws IOException {
+    public static void loadObjectsFromCsvFiles(String filepath) throws IOException {
 
         File myFile = new File(filepath);
         Scanner myReader = new Scanner(myFile);
 
-        HashMap<Integer, Offer> OffersMap = new HashMap<>();
-        HashMap<Integer, User> UsersMap = new HashMap<>();
 
         myReader.nextLine();
         while (myReader.hasNextLine()) {
 
             String data = myReader.nextLine();
 
-            if (filepath.equals(Offer.FILEPATH)) {
+            if (filepath.equals(Offer.FILEPATH)) {        //todo SWITCH!!!
 
                 Offer myOffer = new Offer(data);
-                OffersMap.put(myOffer.id, myOffer);
+                DataBase.OffersMap.put(myOffer.id, myOffer);
+
             } else if (filepath.equals(User.FILEPATH)) {
 
                 User myUser = new User(data);
-                UsersMap.put(myUser.id, myUser);
-
+                DataBase.UsersMap.put(myUser.id, myUser);
             }
         }
 //        System.out.println(OffersMap);
 //        System.out.println(UsersMap);
     }
 
-    public static void showYourOffersCSV() throws IOException {
+    public static HashMap<Integer, Offer> getOffersByUserID(int userID) {
 
-        File Offers = new File(Offer.FILEPATH);
-        Scanner myReader = new Scanner(Offers);
+        HashMap<Integer, Offer> yourOffers = new HashMap<>();
 
-        myReader.nextLine();
-        while (myReader.hasNextLine()) {
-
-            String data = myReader.nextLine();
-            String[] splitted = data.split("," );
-
-            if (splitted[Offer.OFFER_CSV_MAPPINGS.get(Offer.USERNAME_COLUMN_NAME)].contentEquals(Main.loggedUser)) {
-                System.out.print(data + "\n");
+        for (Offer myOffer : DataBase.OffersMap.values()){
+            if (Objects.equals(myOffer.username_id, userID)){
+                yourOffers.put(myOffer.id, myOffer);
             }
         }
+        return yourOffers;
     }
 
-    public static void showOthersOffersCSV() throws IOException {
-
-        File Offers = new File(Offer.FILEPATH);
-        Scanner myReader = new Scanner(Offers);
-
-        myReader.nextLine();
-        while (myReader.hasNextLine()) {
-
-            String data = myReader.nextLine();
-            String[] splitted = data.split("," );
-
-            if (!splitted[Offer.OFFER_CSV_MAPPINGS.get(Offer.USERNAME_COLUMN_NAME)].contentEquals(Main.loggedUser)) {
-                System.out.print(data + "\n");
-            }
-        }
-    }
-
-
-
-
-
-
-
-
+//    public static void showOthersOffers() {
+//
+//        HashMap<Integer, Objects.Offer> othersOffers = new HashMap<>();
+//
+//        for (Objects.Offer myOffer : DataBase.OffersMap.values()){
+//            if (!Objects.equals(myOffer.username_id, Main.loggedUser)){
+//                System.out.println(myOffer);
+//            }
+//        }
+//    }
+//    public static String getCsvLine(int id, String filepath) throws IOException {
+//
+//        File Users = new File(filepath);
+//        Scanner myReader = new Scanner(Users);
+//
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            String[] splitted = data.split("," );
+//
+//            if (splitted[0].contentEquals(String.valueOf(id))) {
+//                return data;
+//            }
+//        }
+//        return null;
+//    }
+//    public static void showYourOffersCSV() throws IOException {
+//
+//        File Offers = new File(Objects.Offer.FILEPATH);
+//        Scanner myReader = new Scanner(Offers);
+//
+//        myReader.nextLine();
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            String[] splitted = data.split("," );
+//
+//            if (splitted[Objects.Offer.OFFER_CSV_MAPPINGS.get(Objects.Offer.USERNAME_COLUMN_NAME)].contentEquals(Main.loggedUser)) {
+//                System.out.print(data + "\n");
+//            }
+//        }
+//    }
+//
+//    public static void showOthersOffersCSV() throws IOException {
+//
+//        File Offers = new File(Objects.Offer.FILEPATH);
+//        Scanner myReader = new Scanner(Offers);
+//
+//        myReader.nextLine();
+//        while (myReader.hasNextLine()) {
+//
+//            String data = myReader.nextLine();
+//            String[] splitted = data.split("," );
+//
+//            if (!splitted[Objects.Offer.OFFER_CSV_MAPPINGS.get(Objects.Offer.USERNAME_COLUMN_NAME)].contentEquals(Main.loggedUser)) {
+//                System.out.print(data + "\n");
+//            }
+//        }
+//    }
+//
 //    public static String getOfferCsv(String csv_offer_id) throws IOException {
 //
 //        File Offers = new File("src\\Data\\Offers.csv");
@@ -193,7 +212,7 @@ public class BackEndMethods {
 //
 //    }
 
-//    public static void updateOffer (Offer myOffer) throws IOException {
+//    public static void updateOffer (Objects.Offer myOffer) throws IOException {
 //        String[] splitted = new String[10];
 //        splitted[0] = myOffer.username;;
 //        splitted[1] = String.valueOf(myOffer.price);

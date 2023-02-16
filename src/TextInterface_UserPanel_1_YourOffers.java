@@ -1,6 +1,9 @@
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Objects;
 import java.util.Scanner;
+import Objects.*;
+
 public class TextInterface_UserPanel_1_YourOffers {
 
     public static final String YOUR_OFFERS_RESULT_GO_BACK = "Go Back";
@@ -13,7 +16,7 @@ public class TextInterface_UserPanel_1_YourOffers {
         ) {
 
             System.out.println("YOUR OFFERS PANEL:");
-            System.out.println("1.Add Offer");
+            System.out.println("1.Add Objects.Offer");
             System.out.println("2.Show Your Offers");
             System.out.println("3.Go back");
 
@@ -29,7 +32,7 @@ public class TextInterface_UserPanel_1_YourOffers {
 
             switch (index) {
                 case 1 -> {
-                    System.out.println("Adding Offer");
+                    System.out.println("Adding Objects.Offer");
                 }
                 case 2 -> {
                     showOffersProcedure();
@@ -47,8 +50,10 @@ public class TextInterface_UserPanel_1_YourOffers {
         while(true){
 
             System.out.println("YOUR OFFERS:");
-            BackEndMethods.showYourOffersCSV();
-
+            HashMap<Integer, Offer> myOffers = BackEndMethods.getOffersByUserID(Main.loggedUserID);
+            for (Offer myOffer : myOffers.values()){
+                System.out.println(myOffer);
+            }
             System.out.println("Type 'B' to go back");
             Scanner myScanner = new Scanner(System.in);
             String index = "0";
