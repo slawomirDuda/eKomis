@@ -1,8 +1,12 @@
+package Text_Interface;
+
 import java.io.IOException;
 import java.util.Scanner;
+
+import Main_Package.DataBase;
 import Objects.*;
 
-public class TextInterface_UserPanel_3_SearchForOffers {
+public class UserPanel_3_SearchForOffers {
 
 //    public static final String SEARCH_FOR_OFFERS_RESULT_GO_BACK = "Go back";
 //    public static final String SEARCH_FOR_OFFERS_RESULT_WORKING = "Working";

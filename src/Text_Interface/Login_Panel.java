@@ -1,16 +1,20 @@
+package Text_Interface;
+
+import Main_Package.BackEndMethods;
+import Main_Package.Main;
 import Objects.User;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class TextInterface_Login {
+public class Login_Panel {
 
     public static final String LOGIN_SCREEN_RESULT_LOGIN_SUCCESS = "Login Success";
     public static final String LOGIN_SCREEN_RESULT_LOGIN_FAILURE = "Login Failure";
     public static final String LOGIN_SCREEN_RESULT_EXIT_APPLICATION = "Exit";
 
-    public static String loginMainScreen() throws FileNotFoundException {
+    public static String loginMainScreen() throws IOException {
 
 
         System.out.println("1.Log in" );
@@ -50,7 +54,10 @@ public class TextInterface_Login {
             String userName = myScanner.nextLine();
             System.out.println("Enter Password:" );
             String password = myScanner.nextLine();
-            BackEndMethods.createUser(userName, password);
+
+            User myUser = new User(BackEndMethods.idGen(User.FILEPATH), userName, password);
+            BackEndMethods.addNewLineToFile(myUser.getObjectAsCSVLine(), User.FILEPATH);
+//            BackEndMethods.createUser(userName, password);
             System.out.println("Account successfully created, you can now log in" );
         } catch (IOException e) {
             System.out.println("An error occurred." );
@@ -58,32 +65,7 @@ public class TextInterface_Login {
         }
     }
 
-//    public static String logInCSV() throws FileNotFoundException {
-//
-//        Scanner myScanner = new Scanner(System.in);
-//        System.out.println("Enter Username:" );
-//        String username = myScanner.nextLine();
-//        String[] splitted = BackEndMethods.findUserCSV(username);
-//
-//        if (splitted != null) {
-//
-//            System.out.println("Enter Password:" );
-//            String password = myScanner.nextLine();
-//
-//            if (splitted[Objects.User.USER_CSV_MAPPINGS.get(Objects.User.PASSWORD_COLUMN_NAME)].contentEquals(password)) {
-//                System.out.println("Access Granted" );
-//                Main.loggedUser = username;
-//                Main.loggedUserPassword = password;
-//                return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
-//            } else {
-//                System.out.println("Wrong Password" );
-//            }
-//        } else {
-//            System.out.println("Objects.User name not found" );
-//        }
-//        return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
-//    }
-    public static String logIn() throws FileNotFoundException {
+    public static String logIn() throws IOException {
 
         Scanner myScanner = new Scanner(System.in);
         System.out.println("Enter Username:" );
@@ -97,14 +79,14 @@ public class TextInterface_Login {
 
             if (foundUser.password.contentEquals(password)) {
                 System.out.println("Access Granted" );
-                Main.loggedUser = username;
-                Main.loggedUserPassword = password;
+                Main.loggedUser = foundUser;
+                Main.loggedUserLine = BackEndMethods.findLineNumber(Main.loggedUser.id, User.FILEPATH);
                 return LOGIN_SCREEN_RESULT_LOGIN_SUCCESS;
             } else {
                 System.out.println("Wrong Password" );
             }
         } else {
-            System.out.println("Objects.User name not found" );
+            System.out.println("User name not found" );
         }
         return LOGIN_SCREEN_RESULT_LOGIN_FAILURE;
     }

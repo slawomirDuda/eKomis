@@ -1,6 +1,8 @@
+package Text_Interface;
+
 import java.util.Scanner;
 
-public class TextInterface_UserPanel_2_Transactions {
+public class UserPanel_2_Transactions {
 
     //    public static final String TRANSACTIONS_RESULT_GO_BACK = "Go back";
 //    public static final String TRANSACTIONS_RESULT_WORKING = "Working";
