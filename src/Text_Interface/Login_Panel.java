@@ -55,7 +55,7 @@ public class Login_Panel {
             System.out.println("Enter Password:" );
             String password = myScanner.nextLine();
 
-            User myUser = new User(BackEndMethods.idGen(User.FILEPATH), userName, password);
+            User myUser = new User(BackEndMethods.idGen("User"), userName, password);
             BackEndMethods.addNewLineToFile(myUser.getObjectAsCSVLine(), User.FILEPATH);
 //            BackEndMethods.createUser(userName, password);
             System.out.println("Account successfully created, you can now log in" );

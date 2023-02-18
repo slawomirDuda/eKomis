@@ -15,13 +15,13 @@ public class UserPanel_3_SearchForOffers {
 
         while (true) {
 
-            Scanner myScanner = new Scanner(System.in);
             System.out.println("SEARCH FOR OFFERS:");
 
             for (Offer myOffer : DataBase.OffersMap.values()){
                 System.out.println(myOffer);
             }
 
+            Scanner myScanner = new Scanner(System.in);
             System.out.println("Type 'B' to go back");
 
             String index = "0";

@@ -30,7 +30,6 @@ public class Main {
     }
 }
 // TODO
-//  różnica miedzy readerami i scannerami
 //  OFFERS (SHOW, ADD, DELETE, SEARCH/BROWSE)
 //  sortowanie/wyszukiwanie
 //  DODAC AUTORYZACJE
@@ -39,6 +38,7 @@ public class Main {
 //  Junction object | CRED
 
 // DONE:
+//  różnica miedzy readerami i scannerami
 //  NIE MOZNA ZA JEDNYM ZALOGOWANIEM ZMIENIC HASLA I USERNAME
 //  ACCOUNT SETTINGS przerobic
 //  CRED = CREATE, READ, EDIT/UPDATE, DELETE
