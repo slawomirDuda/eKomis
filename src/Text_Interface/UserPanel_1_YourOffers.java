@@ -95,42 +95,51 @@ public class UserPanel_1_YourOffers {
         System.out.print("Enter model name: ");
         String model = myScanner.next();
 
-        System.out.print("Choose body type: ");
-        String type = myScanner.next();
-//        System.out.println("1.Hatchback");
-//        System.out.println("2.Wagon");
-//        System.out.println("3.SUV");
-//        System.out.println("4.Sedan");
-//        System.out.println("5.Coupe");
-//
-//        int index = 0;
-//
-//        try {
-//            index = Integer.parseInt(myScanner.nextLine());
-//        } catch (NumberFormatException e) {
-//            System.out.println("WRONG INPUT");
-//        }
-//
-//        switch (index) {
-//            case 1 -> {
-//                String type = "Hatchback";
-//            }
-//            case 2 -> {
-//                String type = "Wagon";
-//            }
-//            case 3 -> {
-//                String type = "SUV";
-//            }
-//            case 4 -> {
-//                String type = "Sedan";
-//            }
-//            case 5 -> {
-//                String type = "Coupe";
-//            }
-//            default -> {
-//                System.out.println("WRONG INDEX NUMBER");
-//            }
-//        }
+        System.out.println("Choose body type: ");
+        System.out.println("1.Hatchback");
+        System.out.println("2.Wagon");
+        System.out.println("3.SUV");
+        System.out.println("4.Sedan");
+        System.out.println("5.Coupe");
+        System.out.println("6.VAN");
+        System.out.println("7.Other");
+
+        String type = null;
+        Scanner myScanner2 = new Scanner(System.in);
+        int index = 0;
+
+        try {
+            index = Integer.parseInt(myScanner2.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("WRONG INPUT");
+        }
+
+        switch (index) {
+            case 1 -> {
+                type = "Hatchback";
+            }
+            case 2 -> {
+                type = "Wagon";
+            }
+            case 3 -> {
+                type = "SUV";
+            }
+            case 4 -> {
+                type = "Sedan";
+            }
+            case 5 -> {
+                type = "Coupe";
+            }
+            case 6 -> {
+                type = "VAN";
+            }
+            case 7 -> {
+                type = "Other";
+            }
+            default -> {
+                System.out.println("WRONG INDEX NUMBER");
+            }
+        }
 
         System.out.print("Enter production year: ");
         String year = myScanner.next();
@@ -138,8 +147,36 @@ public class UserPanel_1_YourOffers {
         System.out.print("Enter engine capacity:");
         String engine = myScanner.next();
 
-        System.out.print("Choose fuel type: ");
-        String fuelType = myScanner.next();
+        System.out.println("Choose fuel type: ");
+        System.out.println("1.Benzine");
+        System.out.println("2.Benzine + LPG");
+        System.out.println("3.Diesel");
+        System.out.println("4.Other type");
+
+        String fuelType = null;
+        Scanner myScanner3 = new Scanner(System.in);
+        int index2 = 0;
+
+        try {
+            index2 = Integer.parseInt(myScanner3.nextLine());
+        } catch (NumberFormatException e) {
+            System.out.println("WRONG INPUT");
+        }
+
+        switch (index2) {
+            case 1 -> {
+                fuelType = "Hatchback";
+            }
+            case 2 -> {
+                fuelType = "Wagon";
+            }
+            case 3 -> {
+                fuelType = "SUV";
+            }
+            default -> {
+                System.out.println("WRONG INDEX NUMBER");
+            }
+        }
 
         System.out.print("Enter horsepower number: ");
         String horsepower = myScanner.next();
@@ -159,6 +196,8 @@ public class UserPanel_1_YourOffers {
         DataBase.OffersMap.put(Integer.parseInt(id), newOffer);
 //        System.out.println("Readed from Database after put: " + DataBase.OffersMap.get(Integer.parseInt(id)));
         BackEndMethods.addNewLineToFile(csvLineFinal,Offer.FILEPATH);
+
+        System.out.println("Done. New Offer has been added");
     }
 }
 
