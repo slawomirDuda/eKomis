@@ -165,13 +165,16 @@ public class UserPanel_1_YourOffers {
 
         switch (index2) {
             case 1 -> {
-                fuelType = "Hatchback";
+                fuelType = "Benzine";
             }
             case 2 -> {
-                fuelType = "Wagon";
+                fuelType = "Benzine + LPG";
             }
             case 3 -> {
-                fuelType = "SUV";
+                fuelType = "Diesel";
+            }
+            case 4 -> {
+                fuelType = "Other type";
             }
             default -> {
                 System.out.println("WRONG INDEX NUMBER");
